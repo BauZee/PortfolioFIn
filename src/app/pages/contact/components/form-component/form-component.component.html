@@ -1,0 +1,73 @@
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()"
+      class="max-w-lg mx-auto p-6 bg-white rounded-2xl shadow-custom">
+  <!-- Überschrift -->
+  <h2 class="text-2xl font-bold text-center text-[#8800ff] mb-6">
+    Kontaktieren Sie mich
+  </h2>
+
+  <!-- Name -->
+  <div class="mb-5">
+    <label for="name" class="block font-medium text-[#8800ff] mb-1">Name</label>
+    <input id="name" type="text" formControlName="name"
+           [ngClass]="{'border-red-500': submitted && contactForm.get('name')?.invalid}"
+           class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8800ff] transition-colors"
+           placeholder="Ihr Name" />
+    <div *ngIf="submitted && contactForm.get('name')?.invalid" class="mt-1">
+      <small class="text-red-600">Dies ist ein Pflichtfeld.</small>
+    </div>
+  </div>
+
+  <!-- Email -->
+  <div class="mb-5">
+    <label for="email" class="block font-medium text-[#8800ff] mb-1">Email</label>
+    <input id="email" type="email" formControlName="email"
+           [ngClass]="{'border-red-500': submitted && contactForm.get('email')?.invalid}"
+           class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8800ff] transition-colors"
+           placeholder="Ihre E-Mail-Adresse" />
+    <div *ngIf="submitted && contactForm.get('email')?.invalid" class="mt-1">
+      <small class="text-red-600">
+        Bitte geben Sie eine gültige Email-Adresse ein. Dies ist ein Pflichtfeld.
+      </small>
+    </div>
+  </div>
+
+  <!-- Betreff -->
+  <div class="mb-5">
+    <label for="subject" class="block font-medium text-[#8800ff] mb-1">Betreff</label>
+    <input id="subject" type="text" formControlName="subject"
+           [ngClass]="{'border-red-500': submitted && contactForm.get('subject')?.invalid}"
+           class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8800ff] transition-colors"
+           placeholder="Betreff" />
+    <div *ngIf="submitted && contactForm.get('subject')?.invalid" class="mt-1">
+      <small class="text-red-600">Dies ist ein Pflichtfeld.</small>
+    </div>
+  </div>
+
+  <!-- Nachricht -->
+  <div class="mb-6">
+    <label for="message" class="block font-medium text-[#8800ff] mb-1">Nachricht</label>
+    <textarea id="message" formControlName="message" rows="5"
+              [ngClass]="{'border-red-500': submitted && contactForm.get('message')?.invalid}"
+              class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8800ff] transition-colors"
+              placeholder="Ihre Nachricht"></textarea>
+    <div *ngIf="submitted && contactForm.get('message')?.invalid" class="mt-1">
+      <small class="text-red-600">Dies ist ein Pflichtfeld.</small>
+    </div>
+  </div>
+
+  <!-- Submit Button -->
+  <button type="submit"
+          class="w-full py-3 bg-[#8800ff] text-white font-semibold rounded-lg hover:bg-purple-700 transition-colors">
+    Nachricht senden
+  </button>
+  
+  <!-- Erfolgsmeldung -->
+  <div *ngIf="success" class="mt-6 flex items-center justify-center text-[#8800ff]">
+    <!-- Lilafarbenes Häkchen – hier als inline SVG -->
+    <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+         xmlns="http://www.w3.org/2000/svg">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+    </svg>
+    <span class="font-medium">Erfolgreich abgesendet!</span>
+  </div>
+</form>

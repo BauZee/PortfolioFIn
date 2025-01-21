@@ -1,0 +1,84 @@
+<section class="min-h-screen flex flex-col items-center justify-center bg-white px-6">
+  <!-- Hauptbereich: Typender Text & Bild -->
+  <div class="container mx-auto flex flex-col md:flex-row items-center justify-center md:justify-between space-y-12 md:space-y-0">
+    <!-- Textbereich -->
+    <div class="md:w-1/2 flex justify-center">
+      <div class="w-full text-center relative">
+        <h1 class="text-4xl md:text-5xl font-bold whitespace-pre-line">
+          {{ displayText }}
+          <span class="border-r-4 border-[#8800ff] ml-1 animate-blink"></span>
+        </h1>
+      </div>
+    </div>
+    <!-- Bildbereich -->
+    <div class="md:w-1/2 flex justify-center">
+      <div 
+        [ngClass]="{'opacity-0': !showContent, 'opacity-100': showContent}" 
+        class="relative group transition-opacity duration-1000"
+      >
+        <!-- Blur-Effekt als farbiger Hintergrund -->
+        <div class="absolute -inset-4 bg-[#8800ff] opacity-20 blur-xl rounded-full group-hover:opacity-40 transition duration-500"></div>
+        <div class="flex justify-center items-center" style="perspective: 1000px;">
+          <img
+            src="assets/images/profile/profile-picture.png"
+            alt="Profilbild"
+            [ngClass]="{'animate-flip': isFlipping}"
+            class="relative w-64 h-64 object-cover rounded-full border-4 border-[#8800ff] shadow-lg
+                   transform transition-transform duration-500"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="w-full mt-16 max-w-4xl grid grid-cols-1 md:grid-cols-3 gap-8">
+    <!-- Einheitliche Card-Struktur -->
+    <a
+    href="/about"
+    [ngClass]="{'opacity-0': !showContent, 'opacity-100': showContent}"
+    class="relative group rounded-2xl transition-opacity duration-1000 hover:scale-105
+           ring-[5px] ring-transparent hover:ring-[#8800ff] focus:ring-transparent
+           shadow-custom"
+  >
+    <div class="relative z-10 flex flex-col items-center justify-center p-6">
+      <p class="text-lg font-medium text-gray-800 text-center">
+        Magst du mehr über mich persönlich erfahren?
+        <span class="text-[#8800ff] font-semibold">Dann klicke hier!</span>
+      </p>
+    </div>
+  </a>
+  
+  <a
+    href="/projects"
+    [ngClass]="{'opacity-0': !showContent, 'opacity-100': showContent}"
+    class="relative group rounded-2xl transition-opacity duration-1000 hover:scale-105
+           ring-[5px] ring-transparent hover:ring-[#8800ff] focus:ring-transparent
+           shadow-custom"
+  >
+    <div class="relative z-10 flex flex-col items-center justify-center p-6">
+      <p class="text-lg font-medium text-gray-800 text-center">
+        Magst du mehr über meine Projekte erfahren?
+        <span class="text-[#8800ff] font-semibold">Dann klicke hier!</span>
+      </p>
+    </div>
+  </a>
+  
+  
+  <a
+  href="/contact"
+  [ngClass]="{'opacity-0': !showContent, 'opacity-100': showContent}"
+  class="relative group rounded-2xl transition-opacity duration-1000 hover:scale-105
+         ring-[5px] ring-transparent hover:ring-[#8800ff] focus:ring-transparent
+         shadow-custom border-transparent focus:border-transparent"
+>
+  <div class="relative z-10 flex flex-col items-center justify-center p-6">
+    <p class="text-lg font-medium text-gray-800 text-center">
+      Magst du mich persönlich kontaktieren?
+      <span class="text-[#8800ff] font-semibold">Dann klicke hier!</span>
+    </p>
+  </div>
+</a>
+
+  </div>
+</section>
