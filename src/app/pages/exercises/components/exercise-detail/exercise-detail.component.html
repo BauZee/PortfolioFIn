@@ -1,0 +1,39 @@
+<section class="section-container">
+  <div class="content-container">
+    <a routerLink="/exercise" class="badge mb-6">← Zurück</a>
+    
+    <div class="grid grid-cols-1 gap-8">
+      <div *ngFor="let task of exercises[currentId]?.tasks" class="card">
+        <h3 class="text-xl font-bold text-primary mb-3">Aufgabe {{task.id}}: {{task.title}}</h3>
+        
+        <div class="space-y-4">
+          <!-- HTML Abschnitt -->
+          <div>
+            <h4 class="info-label">HTML</h4>
+            <pre class="bg-gray-100 p-4 rounded-lg"><code class="language-html">{{task.html}}</code></pre>
+          </div>
+          <!-- CSS Abschnitt -->
+          <div>
+            <h4 class="info-label">CSS</h4>
+            <pre class="bg-gray-100 p-4 rounded-lg"><code class="language-css">{{task.css}}</code></pre>
+          </div>
+          <!-- JavaScript Abschnitt -->
+          <div *ngIf="task.js">
+            <h4 class="info-label">JavaScript</h4>
+            <pre class="bg-gray-100 p-4 rounded-lg"><code class="language-javascript">{{task.js}}</code></pre>
+          </div>
+          <!-- Worker JavaScript Abschnitt -->
+          <div *ngIf="task.workerJs">
+            <h4 class="info-label">Worker-JavaScript</h4>
+            <pre class="bg-gray-100 p-4 rounded-lg"><code class="language-javascript">{{task.workerJs}}</code></pre>
+          </div>
+          <!-- Markdown Abschnitt -->
+          <div *ngIf="task.md">
+            <h4 class="info-label">Markdown Dokument</h4>
+            <pre class="bg-gray-100 p-4 rounded-lg"><code class="language-markdown">{{task.md}}</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

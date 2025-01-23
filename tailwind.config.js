@@ -6,11 +6,12 @@ module.exports = {
   ],
   theme: {
     extend: {
-      boxShadow: {
-        'custom': '0 36px 0 -30px #fff, -36px 0 0 -30px #fff, 0 -36px 0 -30px #fff, 36px 0 0 -30px #fff, 0 0 0 5px #8800ff'
+      colors: {
+        primary: '#8800ff'
       },
-      fontFamily: {
-        sans: ['Montserrat', 'sans-serif'], 
+      boxShadow: {
+        'custom': '0 36px 0 -30px #fff, -36px 0 0 -30px #fff, 0 -36px 0 -30px #fff, 36px 0 0 -30px #fff, 0 0 0 5px #8800ff',
+        'glow': '0 0 40px rgba(136, 0, 255, 0.3)'
       },
       animation: {
         'blink': 'blink 1s step-end infinite',
@@ -18,10 +19,6 @@ module.exports = {
         'flip': 'flip 1s linear',
       },
       keyframes: {
-        typewriter: {
-          'from': { width: '0' },
-          'to': { width: '24em' }
-        },
         blink: {
           'from, to': { 'border-color': 'transparent' },
           '50%': { 'border-color': '#8800ff' }
@@ -38,5 +35,31 @@ module.exports = {
       }
     }
   },
-  plugins: [],
+  plugins: [
+    function({ addComponents }) {
+      addComponents({
+        '.card': {
+          '@apply rounded-2xl p-8 shadow-custom transition-all duration-300 hover:scale-105 ring-[5px] ring-transparent hover:ring-primary': {}
+        },
+        '.section-container': {
+          '@apply py-20': {}
+        },
+        '.section-title': {
+          '@apply text-4xl font-bold text-gray-800 text-center mb-8': {}
+        },
+        '.content-container': {
+          '@apply container mx-auto px-6': {}
+        },
+        '.info-label': {
+          '@apply text-primary font-medium': {}
+        },
+        '.info-value': {
+          '@apply text-gray-700': {}
+        },
+        '.badge': {
+          '@apply bg-primary/10 text-primary px-4 py-2 rounded-full': {}
+        }
+      })
+    }
+  ]
 }

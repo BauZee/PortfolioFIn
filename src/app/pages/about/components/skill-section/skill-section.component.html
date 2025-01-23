@@ -1,63 +1,25 @@
-<!-- Social Links & Hobbies Section -->
-<section class="py-20">
-  <header class="text-center mb-16">
-    <span class="text-[#8800ff] text-lg font-medium">Connect With Me</span>
-    <h2 class="text-4xl font-bold text-gray-800 mt-2">Social & Hobbies</h2>
-  </header>
-  <div class="container mx-auto px-6">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-      <!-- Linke Spalte: Social Links -->
-      <div class="relative group rounded-2xl transition-all duration-300 hover:scale-105
-                  ring-[5px] ring-transparent hover:ring-[#8800ff] focus:ring-transparent
-                  shadow-custom p-6">
-        <h3 class="text-xl font-semibold mb-4">Social Links</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <!-- Professional Links -->
-          <div>
-            <h4 class="text-lg font-medium text-gray-800 mb-2">Professional</h4>
-            <ul class="space-y-3">
-              <li>
-                <a href="https://github.com/BauZee" class="flex items-center gap-2 text-gray-600 hover:text-[#8800ff]" target="_blank">
-                  <span>GitHub</span>
-                </a>
-              </li>
-              <li>
-                <a href="https://www.linkedin.com/in/erwin-bause-10b592185/" class="flex items-center gap-2 text-gray-600 hover:text-[#8800ff]" target="_blank">
-                  <span>LinkedIn</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <!-- Creative Links -->
-          <div>
-            <h4 class="text-lg font-medium text-gray-800 mb-2">Creative</h4>
-            <ul class="space-y-3">
-              <li>
-                <a href="https://soundcloud.com/erwin-bause" class="flex items-center gap-2 text-gray-600 hover:text-[#8800ff]" target="_blank">
-                  <span>SoundCloud</span>
-                </a>
-              </li>
-              <li>
-                <a href="https://open.spotify.com/user/1140283119" class="flex items-center gap-2 text-gray-600 hover:text-[#8800ff]" target="_blank">
-                  <span>Spotify</span>
-                </a>
-              </li>
-            </ul>
-          </div>
+<section class="section-container">
+  <h2 class="section-title">Links zu sozialen Netzwerken</h2>
+
+  <div class="content-container">
+    <div class="card">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div *ngFor="let category of socialCategories">
+          <h4 class="text-lg font-medium mb-8">{{ category.name }}</h4>
+          <ul class="space-y-4">
+            <li *ngFor="let link of category.links">
+              <a [href]="link.url" 
+                 class="group flex items-center gap-4 text-gray-600 hover:text-primary w-full" 
+                 target="_blank">
+                <div class="w-8 flex justify-center items-center text-primary">
+                  <fa-icon [icon]="link.icon" [fixedWidth]="true" size="lg"></fa-icon>
+                </div>
+                <span>{{ link.platform }}</span>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
-
-      <!-- Rechte Spalte: Hobbies -->
-      <div class="relative group rounded-2xl transition-all duration-300 hover:scale-105
-                  ring-[5px] ring-transparent hover:ring-[#8800ff] focus:ring-transparent
-                  shadow-custom p-6">
-        <h3 class="text-xl font-semibold mb-4">Hobbies</h3>
-        <ul class="space-y-4">
-          <li class="flex items-center gap-3">
-            <span>🎸</span>
-            <span>Playing guitar and composing music</span>
-          </li>
-          <li class="flex items-center gap-3">
-            <span>🚴‍♂️</span>
-            <span>Cycling and exploring nature</span>
-          
+    </div>
+  </div>
+</section>

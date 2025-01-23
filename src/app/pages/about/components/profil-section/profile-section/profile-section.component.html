@@ -1,111 +1,69 @@
-<section class="py-20">
-  <div class="container mx-auto px-6">
-    <!-- Sektionstitel -->
-    <div class="text-center mb-12">
-      <h2 class="text-4xl font-bold text-gray-800">Who am I?</h2>
-    </div>
+<section class="section-container">
+  <div class="content-container">
+    <h2 class="section-title">Who am I?</h2>
     
-    <div class="flex flex-col md:flex-row gap-12">
-      <!-- Linke Spalte: Persönlicher Bereich -->
+    <div class="flex flex-col md:flex-row gap-8">
+      <!-- Linke Spalte -->
       <div class="md:w-1/2 flex flex-col items-center">
-        <!-- Profilbild -->
         <div class="relative group mb-8">
-          <div class="absolute -inset-4 bg-[#8800ff] opacity-20 blur-xl rounded-full"></div>
-          <img 
-            src="assets/images/profile/profile-picture.png"
-            alt="Profilbild von Erwin Bause" 
-            class="relative w-64 h-64 object-cover animate-flip rounded-full border-4 border-[#8800ff] shadow-lg group-hover:scale-105 transition-transform duration-500"
-          />
+          <div class="absolute -inset-4 bg-primary opacity-20 blur-xl rounded-full"></div>
+          <img [src]="profileImage"
+              [alt]="'Profilbild von ' + profilName"
+              class="relative w-64 h-64 rounded-full border-4 border-primary shadow-lg
+                      object-cover animate-flip group-hover:scale-105 
+                      transition-transform duration-500"/>
         </div>
-        <!-- Kurzer Text über mich -->
-        <p class="text-gray-600 text-left leading-relaxed max-w-md mb-6">
-          Mein Name ist Erwin Bause, ich studiere derzeit im dritten Semester Informatik. Neben meinem Studium arbeite ich als Werkstudent bei der Exxeta AG als Front-End Entwickler.
-          Meine Hobbys sind:        </p>
-        <!-- Hobbies -->
-        <div class="text-center">
-          <div class="flex flex-wrap justify-center gap-3">
-            
-            <span class="bg-[#8800ff]/10 text-[#8800ff]  px-3 py-1 rounded-full">Camping</span>
-            <span class="bg-[#8800ff]/10 text-[#8800ff] px-3 py-1 rounded-full">Schwimmen</span>
-            <span class="bg-[#8800ff]/10  text-[#8800ff] px-3 py-1 rounded-full">Programmieren</span>
-            <span class="bg-[#8800ff]/10  text-[#8800ff]  px-3 py-1 rounded-full">Fahrradtouren und -reparaturen</span>
-          </div>
+
+        <p class="text-gray-600 text-left leading-relaxed max-w-md mb-8">
+          {{ aboutText }}
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-4">
+          <span *ngFor="let hobby of hobbies" class="badge">
+            {{ hobby }}
+          </span>
         </div>
       </div>
       
+      <!-- Rechte Spalte -->
       <div class="md:w-1/2">
-        <!-- Info Card -->
-        <div class="relative group rounded-2xl transition-all duration-300 hover:scale-105 ring-[5px] ring-transparent hover:ring-[#8800ff] shadow-custom p-6 mb-6">
-          <h5 class="text-2xl font-semibold text-gray-800 mb-4">Informationen über mich</h5>
-          <div class="grid grid-cols-2 gap-6">
+        <div class="card mb-8">
+          <h5 class="text-2xl font-semibold text-gray-800 mb-8">Informationen über mich</h5>
+          
+          <div class="grid grid-cols-2 gap-8">
             <div class="space-y-4">
-              <div class="flex flex-col">
-                <span class="text-[#8800ff] font-medium">Name:</span>
-                <span class="text-gray-700">Erwin Bause</span>
-              </div>
-              <div class="flex flex-col">
-                <span class="text-[#8800ff] font-medium">E-Mail:</span>
-                <span class="text-gray-700">erwinbause23atgmail.com</span>
-              </div>
-              <div class="flex flex-col">
-                <span class="text-[#8800ff] font-medium">Experience:</span>
-                <span class="text-gray-700">2 Years</span>
+              <div *ngFor="let info of personalInfoLeft" class="flex flex-col">
+                <span class="info-label">{{ info.label }}:</span>
+                <span class="info-value">{{ info.value }}</span>
               </div>
             </div>
             <div class="space-y-4">
-              <div class="flex flex-col">
-                <span class="text-[#8800ff] font-medium">Wohnort:</span>
-                <span class="text-gray-700">Leipzig, Germany</span>
-              </div>
-              <div class="flex flex-col">
-                <span class="text-[#8800ff] font-medium">Hochschule:</span>
-                <span class="text-gray-700">HTWK Leipzig</span>
-              </div>
-              <div class="flex flex-col">
-                <span class="text-[#8800ff] font-medium">Studium:</span>
-                <span class="text-gray-700">B.Sc. Informatik</span>
+              <div *ngFor="let info of personalInfoRight" class="flex flex-col">
+                <span class="info-label">{{ info.label }}:</span>
+                <span class="info-value">{{ info.value }}</span>
               </div>
             </div>
           </div>
         </div>
         
-        <!-- Skills Cards -->
-        <div class="grid grid-cols-2 gap-6">
-          <!-- Languages -->
-          <div class="relative group rounded-2xl transition-all duration-300 hover:scale-105 ring-[5px] ring-transparent hover:ring-[#8800ff] shadow-custom p-6">
-            <h5 class="text-2xl font-semibold text-gray-800 mb-4">Sprachen</h5>
+        <!-- Untere Karten -->
+        <div class="grid grid-cols-2 gap-8">
+          <div class="card">
+            <h5 class="text-2xl font-semibold text-gray-800 mb-8">Sprachen</h5>
             <div class="space-y-4">
-              <div class="flex flex-col">
-                <span class="text-[#8800ff] font-medium">Muttersprache:</span>
-                <span class="text-gray-700">Deutsch</span>
-              </div>
-              <div class="flex flex-col">
-                <span class="text-[#8800ff] font-medium">Zweitsprache:</span>
-                <span class="text-gray-700">Englisch (Business Fluent)</span>
-              </div>
-              <div class="flex flex-col">
-                <span class="text-[#8800ff] font-medium">Drittsprache:</span>
-                <span class="text-gray-700">Russisch (Fließend)</span>
+              <div *ngFor="let lang of languages" class="flex flex-col">
+                <span class="info-label">{{ lang.label }}:</span>
+                <span class="info-value">{{ lang.value }}</span>
               </div>
             </div>
           </div>
           
-          
-          <!-- Current Work -->
-          <div class="relative group rounded-2xl transition-all duration-300 hover:scale-105 ring-[5px] ring-transparent hover:ring-[#8800ff] shadow-custom p-6">
-            <h5 class="text-2xl font-semibold text-gray-800 mb-4">Werkstudentsstelle</h5>
+          <div class="card">
+            <h5 class="text-2xl font-semibold text-gray-800 mb-8">Werkstudentsstelle</h5>
             <div class="space-y-4">
-              <div class="flex flex-col">
-                <span class="text-[#8800ff] font-medium">Position:</span>
-                <span class="text-gray-700">Frontend Developer</span>
-              </div>
-              <div class="flex flex-col">
-                <span class="text-[#8800ff] font-medium">Arbeitszeit:</span>
-                <span class="text-gray-700">15h/Week - Hybrid</span>
-              </div>
-              <div class="flex flex-col">
-                <span class="text-[#8800ff] font-medium">Unternehmen:</span>
-                <span class="text-gray-700">EXXETA AG</span>
+              <div *ngFor="let info of workInfo" class="flex flex-col">
+                <span class="info-label">{{ info.label }}:</span>
+                <span class="info-value">{{ info.value }}</span>
               </div>
             </div>
           </div>

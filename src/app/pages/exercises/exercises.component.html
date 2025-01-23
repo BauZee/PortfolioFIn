@@ -1,1 +1,17 @@
-<p>exercises works!</p>
+<section class="section-container">
+    <div class="content-container">
+      <h2 class="section-title">Übungsserien</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div *ngFor="let serie of series" 
+             class="card hover:shadow-lg cursor-pointer"
+             [routerLink]="['/exercise', serie.id]">
+          <h3 class="text-xl font-bold text-primary mb-3">Serie {{serie.id}}</h3>
+          <p class="info-value mb-4">{{serie.description}}</p>
+          <div class="flex flex-wrap gap-2">
+            <span *ngFor="let topic of serie.topics" class="badge">{{topic}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

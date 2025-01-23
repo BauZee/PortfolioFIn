@@ -4,6 +4,8 @@ import { HomePageComponent } from './pages/home/home-page.component';
 import { AboutComponent } from './pages/about/about.component';
 import { FormComponentComponent } from './pages/contact/components/form-component/form-component.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
+import { ExercisesComponent } from './pages/exercises/exercises.component';
+import { ExerciseDetailComponent } from './pages/exercises/components/exercise-detail/exercise-detail.component';
 
 export const appRoutes: Routes = [
   {
@@ -21,5 +23,13 @@ export const appRoutes: Routes = [
   {
     path: 'projects',
     component: ProjectsComponent
+  },
+  {
+    path: 'exercise',
+    component: ExercisesComponent
+  },
+  { path: 'exercise/:id', 
+    component: ExerciseDetailComponent 
   }
+
 ];

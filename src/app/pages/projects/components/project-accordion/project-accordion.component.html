@@ -1,0 +1,28 @@
+<div class="card" [ngClass]="{'md:col-span-2': isOpen}">
+  <div class="flex justify-between items-center cursor-pointer" (click)="toggle()">
+    <div>
+      <h4 class="text-xl font-semibold text-primary">{{ project.title }}</h4>
+      <p class="text-gray-600">{{ project.subtitle }}</p>
+    </div>
+    <span class="text-primary transition-transform duration-300" [ngClass]="{'rotate-180': isOpen}">
+      ▼
+    </span>
+  </div>
+  
+  <div class="transition-all duration-300 overflow-hidden" [ngClass]="{'h-0 opacity-0': !isOpen, 'h-auto opacity-100 mt-4': isOpen}">
+    <div class="mb-4">
+      <img [src]="project.image" [alt]="project.title" class="w-full h-full object-contain rounded-lg" />
+    </div>
+    <div>
+      <p class="text-gray-600">{{ project.description }}</p>
+      <ul class="list-disc list-inside text-gray-600 mt-4 space-y-1">
+        <li *ngFor="let detail of project.details">{{ detail }}</li>
+      </ul>
+    </div>
+    <div *ngIf="project.technologies?.length" class="mt-6 flex flex-wrap gap-2 justify-center">
+      <span *ngFor="let tech of project.technologies" class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">
+        {{ tech }}
+      </span>
+    </div>
+  </div>
+</div>
