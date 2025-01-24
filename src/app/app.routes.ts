@@ -1,35 +1,31 @@
 
 import { Routes } from '@angular/router';
-import { HomePageComponent } from './pages/home/home-page.component';
-import { AboutComponent } from './pages/about/about.component';
-import { FormComponentComponent } from './pages/contact/components/form-component/form-component.component';
-import { ProjectsComponent } from './pages/projects/projects.component';
-import { ExercisesComponent } from './pages/exercises/exercises.component';
-import { ExerciseDetailComponent } from './pages/exercises/components/exercise-detail/exercise-detail.component';
 
 export const appRoutes: Routes = [
   {
     path: '',
-    component: HomePageComponent
+    loadComponent: () => import('./pages/home/home-page.component').then(m => m.HomePageComponent)
   },
   {
     path: 'about',
-    component: AboutComponent
+    loadComponent: () => import('./pages/about/about.component').then(m => m.AboutComponent)
   },
   {
-    path:'contact',
-    component: FormComponentComponent
+    path: 'contact',
+    loadComponent: () => import('./pages/contact/components/form-component/form-component.component').then(m => m.FormComponentComponent)
   },
   {
     path: 'projects',
-    component: ProjectsComponent
+    loadComponent: () => import('./pages/projects/projects.component').then(m => m.ProjectsComponent)
   },
   {
     path: 'exercise',
-    component: ExercisesComponent
+    loadComponent: () => import('./pages/exercises/exercises.component').then(m => m.ExercisesComponent)
   },
-  { path: 'exercise/:id', 
-    component: ExerciseDetailComponent 
+  {
+    path: 'exercise/:id',
+    loadComponent: () => import('./pages/exercises/components/exercise-detail/exercise-detail.component').then(m => m.ExerciseDetailComponent)
   }
-
 ];
+
+

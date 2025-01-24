@@ -1,5 +1,5 @@
 <section class = "section-container">
-<div class="container mx-auto flex flex-col md:flex-row items-center justify-center md:justify-between space-y-12 md:space-y-0">
+<div class="container mx-auto flex flex-col md:flex-row items-center justify-center md:justify-between">
     <div class="md:w-1/2 flex justify-center">
       <div class="w-full text-center relative">
         <h1 class="text-4xl md:text-5xl font-bold whitespace-pre-line">
@@ -13,14 +13,14 @@
         [ngClass]="{'opacity-0': !showContent, 'opacity-100': showContent}" 
         class="relative group transition-opacity duration-1000"
       >
-        <div class="absolute -inset-4 bg-primary opacity-20 blur-xl rounded-full group-hover:opacity-40 transition duration-500"></div>
+        <div class="glow-effect"></div>
         <div class="flex justify-center items-center" style="perspective: 1000px;">
           <img
             src="assets/images/profile/profile-picture.png"
             alt="Profilbild"
             [ngClass]="{'animate-flip': isFlipping}"
-            class="relative w-64 h-64 object-cover rounded-full border-4 border-primary shadow-lg
-                   transform transition-transform duration-500"
+            class="profile-image"
+            loading="lazy"
           />
         </div>
       </div>

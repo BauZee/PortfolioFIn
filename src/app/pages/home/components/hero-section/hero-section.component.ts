@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgClass } from '@angular/common';
 
 @Component({
@@ -7,54 +6,66 @@ import { NgClass } from '@angular/common';
   standalone: true,
   imports: [NgClass],
   templateUrl: './hero-section.component.html',
-  styleUrl: './hero-section.component.css'
+  styleUrls: ['./hero-section.component.css']
 })
 export class HeroSectionComponent implements OnInit {
-  displayText = '';
-  showContent = false;
-  isFlipping = false;
-  private wrongText = 'Hallo, ich bin\nERwin Bauase';
+  displayText: string = '';
+  showContent: boolean = false;
+  isFlipping: boolean = false;
+  initialText: string = 'Hallo, ich bin\nERwin Bauase';
+  finalText: string = 'Erwin Bause';
 
-  ngOnInit() {
-    this.startTyping();
+  ngOnInit(): void {
+    this.animateText();
+    this.showAndFlipContent();
+  }
 
+  private animateText(): void {
+    this.delay(1000)
+      .then(() => this.typeText(this.initialText))
+      .then(() => this.delay(500))
+      .then(() => this.deleteText(12))
+      .then(() => this.delay(200))
+      .then(() => this.typeText(this.finalText));
+  }
+
+  private showAndFlipContent(): void {
     setTimeout(() => {
       this.showContent = true;
       this.startFlipping();
     }, 5000);
   }
 
-  private startFlipping() {
+  private startFlipping(): void {
     setInterval(() => {
       this.isFlipping = true;
-      setTimeout(() => (this.isFlipping = false), 1000);
-    }, 5000); 
+      setTimeout(() => {
+        this.isFlipping = false;
+      }, 1000);
+    }, 5000);
   }
 
-  private async startTyping() {
-    await this.wait(1000);
-    await this.typeText(this.wrongText);
-    await this.wait(500);
-    await this.deleteText(12);
-    await this.wait(200);
-    await this.typeText('Erwin Bause');
+  private typeText(text: string): Promise<void> {
+    return new Promise(async (resolve) => {
+      for (const char of text) {
+        this.displayText += char;
+        await this.delay(75);
+      }
+      resolve();
+    });
   }
 
-  private async typeText(text: string) {
-    for (const char of text) {
-      this.displayText += char;
-      await this.wait(75);
-    }
+  private deleteText(count: number): Promise<void> {
+    return new Promise(async (resolve) => {
+      for (let i = 0; i < count; i++) {
+        this.displayText = this.displayText.slice(0, -1);
+        await this.delay(50);
+      }
+      resolve();
+    });
   }
 
-  private async deleteText(chars: number) {
-    for (let i = 0; i < chars; i++) {
-      this.displayText = this.displayText.slice(0, -1);
-      await this.wait(50);
-    }
-  }
-
-  private wait(ms: number): Promise<void> {
-    return new Promise((resolve) => setTimeout(resolve, ms));
+  private delay(ms: number): Promise<void> {
+    return new Promise(resolve => setTimeout(resolve, ms));
   }
 }

@@ -1,13 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: 'selector',
+  darkMode: 'selector', // Optional: Passe dies nach Bedarf an
   content: [
-    "./src/**/*.{html,ts}"
+    "./src/**/*.{html,ts}" // Stelle sicher, dass alle relevanten Dateien erfasst werden
   ],
   theme: {
     extend: {
       colors: {
-        primary: '#8800ff'
+        primary: '#8800ff' // Definiert die primäre Farbe
       },
       boxShadow: {
         'custom': '0 36px 0 -30px #fff, -36px 0 0 -30px #fff, 0 -36px 0 -30px #fff, 36px 0 0 -30px #fff, 0 0 0 5px #8800ff',
@@ -58,7 +58,16 @@ module.exports = {
         },
         '.badge': {
           '@apply bg-primary/10 text-primary px-4 py-2 rounded-full': {}
-        }
+        },
+        '.navigation-card-content': {
+          '@apply flex flex-col items-center justify-center h-full': {}
+        },
+        '.glow-effect': {
+          '@apply absolute -inset-4 bg-primary opacity-20 blur-xl rounded-full group-hover:opacity-40 transition duration-500': {}
+        },
+        '.profile-image': {
+          '@apply relative w-64 h-64 object-cover rounded-full border-4 border-primary shadow-lg transform transition-transform duration-500': {}
+        },
       })
     }
   ]

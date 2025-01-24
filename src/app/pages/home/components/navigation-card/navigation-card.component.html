@@ -1,18 +1,17 @@
-<div class="w-full mt-16 max-w-4xl grid grid-cols-1 md:grid-cols-3 gap-8">
-    <a
-      *ngFor="let card of navigationCards"
-      [href]="card.href"
-      [ngClass]="{'opacity-0': !showContent, 'opacity-100': showContent}"
-      class="rounded-2xl transition-opacity duration-1000 hover:scale-105
-             ring-[5px] ring-transparent hover:ring-primary
-             shadow-custom"
-    >
-      <div class="flex flex-col items-center justify-center p-6">
-        <p class="text-lg font-medium text-gray-800 text-center">
-          {{ card.question }}
-          <span class="text-[#8800ff] font-semibold">{{ card.callToAction }}</span>
-        </p>
-      </div>
-    </a>
-  </div>
-  
+<section class = "section-container">
+<div class="w-full max-w-6xl grid grid-cols-1 md:grid-cols-4 gap-8">
+  <a
+    *ngFor="let card of navigationCards"
+    [href]="card.href"
+    [ngClass]="{'opacity-0': !showContent, 'opacity-100': showContent}"
+    class="card"
+  >
+    <div class="navigation-card-content">
+      <p class="text-lg font-medium text-gray-800 text-center">
+        {{ card.question }}
+        <span class="text-primary font-semibold">{{ card.callToAction }}</span>
+      </p>
+    </div>
+  </a>
+</div>
+</section>
