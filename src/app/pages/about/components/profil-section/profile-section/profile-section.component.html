@@ -1,34 +1,31 @@
 <section class="section-container">
   <div class="content-container">
-    <h2 class="section-title">Who am I?</h2>
+    <h1 class="section-title">Wer bin ich?</h1>
     
     <div class="flex flex-col md:flex-row gap-8">
-      <!-- Linke Spalte -->
       <div class="md:w-1/2 flex flex-col items-center">
-        <div class="relative group mb-8">
-          <div class="absolute -inset-4 bg-primary opacity-20 blur-xl rounded-full"></div>
+        <div class="relative group mb-8" role="img">
+          <div class="glow-effect"></div>
           <img [src]="profileImage"
-              [alt]="'Profilbild von ' + profilName"
-              class="relative w-64 h-64 rounded-full border-4 border-primary shadow-lg
-                      object-cover animate-flip group-hover:scale-105 
-                      transition-transform duration-500"/>
+               [alt]="'Profilbild von ' + profilName"
+               loading="lazy"
+               class="profile-image animate-flip group-hover:scale-105"/>
         </div>
 
-        <p class="text-gray-600 text-left leading-relaxed max-w-md mb-8">
+        <p class="text-left max-w-md mb-8">
           {{ aboutText }}
         </p>
 
-        <div class="flex flex-wrap justify-center gap-4">
-          <span *ngFor="let hobby of hobbies" class="badge">
+        <div class="flex flex-wrap justify-center gap-4" role="list" aria-label="Hobbies">
+          <span *ngFor="let hobby of hobbies" class="badge" role="listitem">
             {{ hobby }}
           </span>
         </div>
       </div>
       
-      <!-- Rechte Spalte -->
       <div class="md:w-1/2">
         <div class="card mb-8">
-          <h5 class="text-2xl font-semibold text-gray-800 mb-8">Informationen über mich</h5>
+          <h2 class="card-title">Informationen über mich</h2>
           
           <div class="grid grid-cols-2 gap-8">
             <div class="space-y-4">
@@ -46,26 +43,25 @@
           </div>
         </div>
         
-        <!-- Untere Karten -->
         <div class="grid grid-cols-2 gap-8">
           <div class="card">
-            <h5 class="text-2xl font-semibold text-gray-800 mb-8">Sprachen</h5>
-            <div class="space-y-4">
+            <h2 class="card-title">Sprachen</h2>
+            <dl class="space-y-4">
               <div *ngFor="let lang of languages" class="flex flex-col">
                 <span class="info-label">{{ lang.label }}:</span>
                 <span class="info-value">{{ lang.value }}</span>
               </div>
-            </div>
+            </dl>
           </div>
           
           <div class="card">
-            <h5 class="text-2xl font-semibold text-gray-800 mb-8">Werkstudentsstelle</h5>
-            <div class="space-y-4">
+            <h2 class="card-title">Werkstudentsstelle</h2>
+            <dl class="space-y-4">
               <div *ngFor="let info of workInfo" class="flex flex-col">
                 <span class="info-label">{{ info.label }}:</span>
                 <span class="info-value">{{ info.value }}</span>
               </div>
-            </div>
+            </dl>
           </div>
         </div>
       </div>

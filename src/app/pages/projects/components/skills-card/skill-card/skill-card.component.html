@@ -1,13 +1,16 @@
-<div class="card group">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div *ngFor="let category of skillCategories">
-        <h3 class="text-xl font-semibold text-primary mb-4">{{ category.title }}</h3>
-        <div class="space-y-2">
-          <div *ngFor="let row of category.skills" class="flex items-center gap-2">
-            <span *ngFor="let skill of row" class="badge">{{ skill }}</span>
-          </div>
+<div class="card group" aria-label="Fähigkeitenübersicht">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div *ngFor="let category of skillCategories">
+      <h3 class="text-xl font-semibold text-primary mb-4" [attr.aria-label]="'Fähigkeitskategorie: ' + category.title">
+        {{ category.title }}
+      </h3>
+      <div class="space-y-2" [attr.aria-label]="'Fähigkeiten in Kategorie: ' + category.title">
+        <div *ngFor="let row of category.skills" class="flex items-center gap-2">
+          <span *ngFor="let skill of row" class="badge" [attr.aria-label]="'Fähigkeit: ' + skill">
+            {{ skill }}
+          </span>
         </div>
       </div>
     </div>
   </div>
-  
+</div>

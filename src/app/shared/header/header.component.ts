@@ -2,13 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-
 @Component({
   selector: 'app-header',
   standalone: true,
   imports: [CommonModule, RouterModule],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
   menuItems = [
@@ -26,6 +25,14 @@ export class HeaderComponent {
       ]
     },
     {
+      label: 'Übungsserien',
+      link: '/exercise',
+      subItems: Array.from({ length: 9 }, (_, i) => ({
+        label: `Serie ${i + 1}`,
+        link: `/exercise/${i + 1}`
+      }))
+    },
+    {
       label: 'Über mich',
       link: '/about'
     },
@@ -33,13 +40,11 @@ export class HeaderComponent {
       label: 'Kontakt',
       link: '/contact'
     }
-];
+  ];
 
   mobileMenuOpen = false;
 
   toggleMobileMenu() {
     this.mobileMenuOpen = !this.mobileMenuOpen;
   }
-
 }
-

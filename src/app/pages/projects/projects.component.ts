@@ -19,117 +19,165 @@ import { SkillCardComponent } from './components/skills-card/skill-card/skill-ca
 export class ProjectsComponent {
   privateProjects: Project[] = [
     {
-      title: 'Potentiostat Benutzeroberfläche',
-      subtitle: 'Bachelorarbeit im Studiengang Medizintechnik...',
-      image: 'assets/images/projects/Bachelorarbeit-image.png',
-      description: 'Bachelorarbeit im Studiengang Medizintechnik an der Ernst-Abbe-Hochschule Jena...',
-      details: [
-        'Kommunikation mit dem Open-Source Potentiostaten über eine serielle Schnittstelle (RS232)',
-        'Entwicklung einer benutzerfreundlichen GUI für die Steuerung und Konfiguration eines Open-Source-Potentiostaten',
-        'Implementierung der elektrochemischen Messmethoden Cyclovoltammetrie und Squarewave-Voltammetrie',
-        'Datenaufnahme, Visualisierung und Analyse der Ergebnisse elektrochemischer Messmethoden',
-        'Integration von Kalibrierungsfunktionen für pH- und Sauerstoffsensoren'
+      "title": "Entwicklung einer Benutzeroberfläche für einen Potentiostaten",
+      "subtitle": "Bachelorarbeit im Studiengang Medizintechnik",
+      "image": "assets/images/projects/Bachelorarbeit-image.png",
+      "description": "Funktionalitäten der Software:",
+      "details": [
+        "Entwicklung einer benutzerfreundlichen grafischen Benutzeroberfläche (GUI) für die Steuerung eines Open-Source-Potentiostaten",
+        "Kommunikation mit dem Potentiostaten über serielle Schnittstellen (RS232)",
+        "Implementierung elektrochemischer Messmethoden wie Cyclovoltammetrie (CV) und Squarewavevoltammetrie (SWV)",
+        "Echtzeitaufnahme, Visualisierung und Analyse der Messdaten",
+        "Integration von Kalibrierungsfunktionen für pH- und Sauerstoffsensoren"
       ],
-      technologies: ['Angular', 'Tailwind CSS', 'TypeScript']
+      "technologies": [
+        "Python",
+        "Tkinter",
+        "Matplotlib",
+        "pySerial"
+      ]
+    },
+    
+    {
+      "title": "Schiffe versenken",
+      "subtitle": "Prüfungsprojekt im zweiten Semester im Modul 'Anwendungsorientierte Programmierung' an der HTWK Leipzig in einer Zweiergruppe",
+      "image": "assets/images/projects/SchiffeVersenken-min.png",
+      "description": "Funktionalitäten des Spiels:",
+      "details": [
+        "2-Spieler-Modus und Computermodus mit wechselseitigem Schießen",
+        "Grafische Benutzeroberfläche (GUI) mit zwei Spielfeldern pro Spieler (eigene Schiffe und gegnerische Trefferanzeige)",
+        "Regelkonforme Platzierung von Schiffen (z. B. keine angrenzenden Schiffe)",
+        "Debug-Modus für Testzwecke ohne Spielerwechsel"
+      ],
+      "technologies": ["Java", "Java Swing"]
     },
     {
-      title: 'Schiffe versenken',
-      subtitle: 'Prüfungsprojekt im zweiten Semester...',
-      image: 'assets/images/projects/SchiffeVersenken-min.png',
-      description: 'Prüfungsprojekt im zweiten Semester im Modul "Anwendungsorientierte Programmierung"...',
-      details: [
-        '2-Spieler-Modus & Computermodus mit wechselseitigem Schießen',
-        'GUI mit zwei Spielfeldern pro Spieler (eigene Schiffe und gegnerische Trefferanzeige)',
-        'Regelkonforme Platzierung von Schiffen (z. B. keine angrenzenden Schiffe)',
-        'Debug-Modus für Testzwecke ohne Spielerwechsel'
+      "title": "Smart Home System",
+      "subtitle": "Seminarfacharbeit im beruflichen Gymnasium an der Andreas Gordon Schule",
+      "image": "assets/images/projects/smart-home.png",
+      "description": "Funktionalitäten der App:",
+      "details": [
+        "Integration eines Rauch- und Dämmerungssensors zur Erhöhung der Sicherheit",
+        "Programmierung einer Android-App zur Anzeige von Fenster-, Tür-, Licht- und Rauchstatus",
+        "Einrichtung einer Realtime-Datenbank mit Firebase für die Kommunikation und Statusverfolgung",
+        "Prototyp auf einem Steckbrett mit LEDs zur visuellen Darstellung der Sensorzustände"
       ],
-      technologies: ['JavaScript', 'HTML/CSS']
-    },
-    {
-      title: 'Smart Home System',
-      subtitle: 'Seminarfacharbeit im beruflichen Gymnasium...',
-      image: 'assets/images/projects/smart-home.png',
-      description: 'Seminarfacharbeit im beruflichen Gymnasium an der Andreas Gordon Schule...',
-      details: [
-        'Integration eines Rauch- und Dämmerungssensors für Sicherheit',
-        'Programmierung einer Android-App zur Anzeige von Fenster-, Tür-, Licht- und Rauchstatus',
-        'Einrichtung einer Realtime-Datenbank mit Firebase',
-        'Prototyp auf einem Steckbrett mit LEDs zur grafischen Anzeige'
-      ],
-      technologies: []
+      "technologies": ["Raspberry Pi", "Firebase", "Android App Development"]
     },
     {
       title: 'Buchhandlung-Verwaltungssystem',
-      subtitle: 'Prüfungsprojekt im ersten Semester...',
+      subtitle: 'Prüfungsprojekt im ersten Semester im Modul "Grundlagen der Programmierung" an der HTWK Leipzig.',
       image: 'assets/images/projects/bookstore.png',
-      description: 'Prüfungsprojekt im ersten Semester im Modul "Grundlagen der Programmierung" an der HTWK Leipzig...',
+      description: 'Funktionalitäten des Programmes:',
       details: [
         'Speicherung von Autor, Titel, Verlag, ISBN, Jahr, Preis',
         'Mehrfache Suchfunktionen (Autor, Titel, ISBN)',
         'Automatische Lagerbestandsverwaltung',
         'Verkaufsabwicklung mit Bestandsprüfung'
       ],
-      technologies: []
+      technologies: ["C++"]
+    },
+    {
+      title: 'Blog meiner Fahrradtour nach Kroatien',
+      subtitle: 'Von Prag nach Rijeka in zwei Wochen',
+      image: 'assets/images/projects/fahrradtour-kroatien.png',
+      description: 'Eine eindrucksvolle Fahrradtour von Prag nach Rijeka über 1.593 Kilometer in zwei Wochen, dokumentiert mit Bildern, Statistiken und Erlebnissen.',
+      details: [
+        '1.593 Kilometer von Prag nach Rijeka in 14 Etappen',
+        'Durchquerung von Tschechien, Österreich, Slowenien, Italien und Kroatien',
+        'Anspruchsvolle Strecken mit 14.130 Höhenmetern bergauf',
+        'Übernachtungen im Zelt, in Wäldern, an Flussufern und gelegentlich auf Campingplätzen',
+        'Detaillierte Planung und Durchführung mit einem fünfköpfigen Team',
+        'Dokumentation der Route, Ausrüstung und Erlebnisse auf einer interaktiven Webseite'
+      ],
+      technologies: [
+        'Bootstrap 5',
+        'Lightbox Plugin',
+        'bs5-accordion',
+        'HTML/CSS'
+      ]
+    },
+    {
+      title: 'Portfolio-Webseite – Prüfungsprojekt',
+      subtitle: 'Lehrveranstaltung: Multimediale Webprogrammierung (Wintersemester 2024/25)',
+      image: 'assets/images/projects/portfolio.png',
+      description: 'Prüfungsprojekt zur Entwicklung einer Portfolio-Webseite im Modul Multimediale Webprogrammierung an der HTWK Leipzig.',
+      details: [
+        'Erstellung einer responsive Portfolio-Webseite mit Unterseiten zur Präsentation von Person, Bildungsweg, Fähigkeiten, Projekten, Hobbys und Referenzen.',
+        'Integration von Übungsinhalten aus den Seminaraufgaben (Serie 1–9) als eigenständige Unterseiten.',
+        'Umsetzung von SEO-Optimierungen (Keywords, Open-Graph, Schema.org) und Ladezeitenoptimierung (Lazy Loading, Critical Rendering Path).',
+        'Bericht über eingesetzte Medienformate, Designentscheidungen und Lernerkenntnisse (2–3 A4-Seiten).',
+        'Zusatzpunkte für Kreativität und Originalität der Umsetzung.'
+      ],
+      technologies: [
+        'Tailwind',
+        'Angular',
+        'EmailJS',
+        'SEO-Tools',
+      ]
     }
+    
+    
   ];
 
   wordpressProjects: Project[] = [
     {
-      title: 'Security Unternehmen Website',
-      subtitle: 'Moderne Website für ein Sicherheitsunternehmen',
+      title: 'Website für Sicherheitsunternehmen',
+      subtitle: 'Professionelle und moderne Darstellung eines Sicherheitsunternehmens',
       image: '',
-      description: 'Moderne Website für ein Sicherheitsunternehmen:',
+      description: 'Entwicklung einer modernen und übersichtlichen Website für ein Sicherheitsunternehmen. Die Seite bietet eine klare Struktur und umfassende Informationen.',
       details: [
-        'Startseite',
-        'Kontakt',
-        'Leistungen',
-        'Über uns',
-        'Karriere'
+        'Startseite mit ansprechendem Design',
+        'Kontaktformular zur direkten Kundenanfrage',
+        'Detaillierte Übersicht über angebotene Leistungen',
+        'Informationen über das Unternehmen',
+        'Karriereseite für potenzielle Bewerber'
       ],
       technologies: ['WordPress', 'PHP', 'CSS']
     },
     {
-      title: 'Autowaschanlage',
-      subtitle: 'Moderne Website für eine Autowaschanlage',
+      title: 'Website für eine Autowaschanlage',
+      subtitle: 'Moderne und kundenfreundliche Website für eine Autowaschanlage',
       image: '',
-      description: 'Moderne Website für eine Autowaschanlage:',
+      description: 'Erstellung einer attraktiven Website, die die Dienstleistungen und Preise der Autowaschanlage klar darstellt.',
       details: [
-        'Startseite',
-        'Über uns',
-        'Kontakt',
-        'Preise',
-        'Leistungen'
+        'Startseite mit allen wichtigen Informationen',
+        'Abschnitt "Über uns" zur Vorstellung des Unternehmens',
+        'Kontaktseite mit Formular und Standortanzeige',
+        'Preisliste für verschiedene Waschprogramme',
+        'Leistungsübersicht für die angebotenen Services'
       ],
       technologies: ['WordPress', 'PHP']
     },
     {
-      title: 'Security Unternehmen Website',
-      subtitle: 'Moderne Website für ein weiteres Sicherheitsunternehmen',
+      title: 'Website für weiteres Sicherheitsunternehmen',
+      subtitle: 'Professionelle Online-Präsenz für ein weiteres Sicherheitsunternehmen',
       image: '',
-      description: 'Moderne Website für ein weiteres Sicherheitsunternehmen:',
+      description: 'Entwicklung einer Website für ein Sicherheitsunternehmen mit Fokus auf klarer Navigation und modernem Design.',
       details: [
-        'Startseite',
-        'Kontakt',
-        'Leistungen',
-        'Über uns',
-        'Karriere'
+        'Startseite mit Unternehmensvorstellung',
+        'Kontaktformular und Standortkarte',
+        'Leistungsübersicht für Kunden',
+        'Informationen über das Unternehmen',
+        'Karrierebereich für Bewerbungen'
       ],
       technologies: ['WordPress', 'PHP', 'CSS']
     },
     {
-      title: 'Fußballverein',
-      subtitle: 'Dynamische Website für einen Fußballverein',
+      title: 'Website für einen Fußballverein',
+      subtitle: 'Interaktive Website für einen Fußballverein mit dynamischen Funktionen',
       image: '',
-      description: 'Dynamische Website für einen Fußballverein:',
+      description: 'Erstellung einer Website für einen Fußballverein mit Fokus auf aktuelle Informationen und Vereinsaktivitäten.',
       details: [
-        'Spielplan & Ergebnisse',
-        'Mannschaftsverwaltung',
-        'News & Events',
-        'Bildergalerie'
+        'Dynamische Anzeige von Spielplänen und Ergebnissen',
+        'Mannschaftsverwaltung mit Profilen',
+        'News- und Eventbereich für Vereinsnachrichten',
+        'Bildergalerie für besondere Momente und Highlights'
       ],
       technologies: ['WordPress', 'PHP']
     }
   ];
+
 
   angularProjects: Project[] = [
     {

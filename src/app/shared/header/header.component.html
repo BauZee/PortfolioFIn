@@ -1,4 +1,4 @@
-<nav class="fixed w-full top-0 z-50 bg-white border-b border-primary">
+<nav class="fixed w-full top-0 z-50 bg-white border-b border-primary" aria-label="Hauptnavigation">
   <div class="content-container">
     <div class="flex items-center justify-between h-16">
       <!-- Logo -->
@@ -7,28 +7,31 @@
       </div>
 
       <!-- Desktop Menu -->
-      <ul class="hidden md:flex space-x-8">
-        <li *ngFor="let item of menuItems" class="relative group">
-          <a [href]="item.link" class="info-value hover:text-primary px-3 py-2">
-            {{ item.label }}
-          </a>
-          
-          <!-- Dropdown -->
-          <ul *ngIf="item.subItems" 
-              class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md opacity-0 invisible 
-                     group-hover:opacity-100 group-hover:visible transition-all duration-200">
-            <li *ngFor="let subItem of item.subItems">
-              <a [href]="subItem.link" class="block px-4 py-2 info-value hover:text-primary hover:bg-primary/10">
-                {{ subItem.label }}
-              </a>
-            </li>
-          </ul>
-        </li>
+      <ul class="hidden md:flex space-x-8" aria-label="Hauptmenü">
+        <ng-container *ngFor="let item of menuItems">
+          <li class="relative group">
+            <a [href]="item.link" class="info-value hover:text-primary px-3 py-2" [attr.aria-label]="item.label">
+              {{ item.label }}
+            </a>
+            <!-- Dropdown -->
+            <ul *ngIf="item.subItems" 
+                class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md opacity-0 invisible 
+                       group-hover:opacity-100 group-hover:visible transition-all duration-200"
+                [attr.aria-label]="'Untermenü zu ' + item.label">
+              <li *ngFor="let subItem of item.subItems">
+                <a [href]="subItem.link" class="block px-4 py-2 info-value hover:text-primary hover:bg-primary/10"
+                   [attr.aria-label]="subItem.label">
+                  {{ subItem.label }}
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ng-container>
       </ul>
 
       <!-- Mobile Button -->
-      <button (click)="toggleMobileMenu()" class="md:hidden text-primary">
-        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <button (click)="toggleMobileMenu()" class="md:hidden text-primary" aria-label="Menü umschalten">
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
           <path *ngIf="!mobileMenuOpen" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           <path *ngIf="mobileMenuOpen" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
@@ -37,19 +40,21 @@
   </div>
 
   <!-- Mobile Menu -->
-  <div *ngIf="mobileMenuOpen" class="md:hidden bg-white">
+  <div *ngIf="mobileMenuOpen" class="md:hidden bg-white" aria-label="Mobiles Menü">
     <div class="content-container py-2">
       <ng-container *ngFor="let item of menuItems">
         <a [href]="item.link" 
            class="block py-2 info-value hover:text-primary"
+           [attr.aria-label]="item.label"
            (click)="mobileMenuOpen = false">
           {{ item.label }}
         </a>
         <!-- Mobile Submenu -->
-        <div *ngIf="item.subItems" class="pl-4">
+        <div *ngIf="item.subItems" class="pl-4" [attr.aria-label]="'Untermenü zu ' + item.label">
           <a *ngFor="let subItem of item.subItems"
              [href]="subItem.link"
              class="block py-2 info-value hover:text-primary hover:bg-primary/10"
+             [attr.aria-label]="subItem.label"
              (click)="mobileMenuOpen = false">
             {{ subItem.label }}
           </a>

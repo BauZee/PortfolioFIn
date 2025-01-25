@@ -1,3 +1,5 @@
+import { exercise1 } from "./exercise-1";
+import { exercise2 } from "./exercise-2";
 import { exercise3 } from "./exercise-3";
 import { exercise4 } from "./exercise-4";
 import { exercise5 } from "./exercise-5";
@@ -8,6 +10,8 @@ import { exercise9 } from "./exercise-9";
 
 
 export const exerciseData = {
+  1: exercise1,
+  2: exercise2,
   3: exercise3,
   4: exercise4,
   5: exercise5,

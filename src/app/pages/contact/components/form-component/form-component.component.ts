@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
-
+import { SeoService } from '../../../../services/seo.service';
+import { contactSeoData } from '../../seo-data/seo.data';
 @Component({
   selector: 'app-form-component',
   standalone: true,
@@ -19,10 +20,12 @@ export class FormComponentComponent implements OnInit {
   private templateID = 'template_nxtbox9';
   private userID = 'DVPhbOR5YAbL-ow0m';
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private seoService: SeoService) {}
 
   ngOnInit(): void {
     this.initForm();
+    this.seoService.setSeoData(contactSeoData);
+
   }
 
   private initForm(): void {

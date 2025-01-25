@@ -1,17 +1,18 @@
-<section class = "section-container">
-<div class="w-full max-w-6xl grid grid-cols-1 md:grid-cols-4 gap-8">
-  <a
-    *ngFor="let card of navigationCards"
-    [href]="card.href"
-    [ngClass]="{'opacity-0': !showContent, 'opacity-100': showContent}"
-    class="card"
-  >
-    <div class="navigation-card-content">
-      <p class="text-lg font-medium text-gray-800 text-center">
-        {{ card.question }}
-        <span class="text-primary font-semibold">{{ card.callToAction }}</span>
-      </p>
-    </div>
-  </a>
-</div>
+<section class="section-container" aria-label="'Navigation der Karten'">
+  <div class="w-full max-w-6xl grid grid-cols-1 md:grid-cols-4 gap-8">
+    <a
+      *ngFor="let card of navigationCards"
+      [href]="card.href"
+      class="card focus:ring-2 focus:ring-primary focus:outline-none"
+      [attr.aria-label]="card.question"
+      [ngClass]="{'opacity-0': !showContent, 'opacity-100': showContent}"
+    >
+      <div class="navigation-card-content">
+        <p class="text-lg font-medium text-gray-800 text-center">
+          {{ card.question }}
+          <span class="text-primary font-semibold">{{ card.callToAction }}</span>
+        </p>
+      </div>
+    </a>
+  </div>
 </section>

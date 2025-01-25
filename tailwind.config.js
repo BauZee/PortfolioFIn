@@ -68,6 +68,9 @@ module.exports = {
         '.profile-image': {
           '@apply relative w-64 h-64 object-cover rounded-full border-4 border-primary shadow-lg transform transition-transform duration-500': {}
         },
+        '.card-title': {
+          '@apply text-2xl font-semibold text-gray-800 mb-8': {}
+        },
       })
     }
   ]

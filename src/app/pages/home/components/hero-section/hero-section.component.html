@@ -1,24 +1,24 @@
-<section class = "section-container">
-<div class="container mx-auto flex flex-col md:flex-row items-center justify-center md:justify-between">
+<section class="section-container" aria-label="Hero Bereich">
+  <div class="container mx-auto flex flex-col md:flex-row items-center justify-center md:justify-between">
     <div class="md:w-1/2 flex justify-center">
-      <div class="w-full text-center relative">
-        <h1 class="text-4xl md:text-5xl font-bold whitespace-pre-line">
+      <div class="w-full text-center">
+        <h1 class="text-4xl md:text-5xl font-bold whitespace-pre-line" aria-label="Willkommen auf meinem Portfolio">
           {{ displayText }}
-          <span class="border-r-4 border-primary ml-1 animate-blink"></span>
+          <span class="border-r-4 border-primary ml-1 animate-blink" aria-hidden="true"></span>
         </h1>
       </div>
     </div>
     <div class="md:w-1/2 flex justify-center">
-      <div 
-        [ngClass]="{'opacity-0': !showContent, 'opacity-100': showContent}" 
+      <div
         class="relative group transition-opacity duration-1000"
+        [ngClass]="{'opacity-0': !showContent, 'opacity-100': showContent}"
+        [attr.aria-label]="'Profilbild von Erwin Bause'"
       >
-        <div class="glow-effect"></div>
+        <div class="glow-effect" aria-hidden="true"></div>
         <div class="flex justify-center items-center" style="perspective: 1000px;">
           <img
             src="assets/images/profile/profile-picture.png"
-            alt="Profilbild"
-            [ngClass]="{'animate-flip': isFlipping}"
+            alt="Profilbild von Erwin Bause"
             class="profile-image"
             loading="lazy"
           />

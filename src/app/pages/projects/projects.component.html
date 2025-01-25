@@ -1,30 +1,49 @@
-<section class="section-container" id="projects">
+<section class="section-container" id="projects" aria-label="Projekte">
   <h2 class="section-title mt-2">Meine Projekte</h2>
-  <div class="content-container mb-16" id="private">
+
+  <!-- Private Projekte -->
+  <div class="content-container mb-16" id="private" aria-label="Private Projekte">
     <h3 class="text-2xl font-bold text-gray-800 mb-8">Private Projekte</h3>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <app-project-accordion *ngFor="let proj of privateProjects" [project]="proj"></app-project-accordion>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8" aria-label="Liste privater Projekte">
+      <app-project-accordion 
+        *ngFor="let proj of privateProjects" 
+        [project]="proj"
+        [attr.aria-label]="'Projekt: ' + proj.title">
+      </app-project-accordion>
     </div>
   </div>
 
-  <div class="content-container mb-16" id="wordpress">
+  <!-- WordPress Projekte -->
+  <div class="content-container mb-16" id="wordpress" aria-label="WordPress Projekte">
     <h3 class="text-2xl font-bold text-gray-800 mb-8">WordPress Projekte</h3>
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-      <app-project-accordion *ngFor="let proj of wordpressProjects" [project]="proj"></app-project-accordion>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6" aria-label="Liste von WordPress-Projekten">
+      <app-project-accordion 
+        *ngFor="let proj of wordpressProjects" 
+        [project]="proj"
+        [attr.aria-label]="'Projekt: ' + proj.title">
+      </app-project-accordion>
     </div>
   </div>
 
-  <div class="content-container" id="angular">
+  <!-- Angular & Tailwind Projekte -->
+  <div class="content-container" id="angular" aria-label="Angular & Tailwind Projekte">
     <h3 class="text-2xl font-bold text-gray-800 mb-8">Angular & Tailwind Projekte</h3>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <app-project-accordion *ngFor="let proj of angularProjects" [project]="proj"></app-project-accordion>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8" aria-label="Liste von Angular- und Tailwind-Projekten">
+      <app-project-accordion 
+        *ngFor="let proj of angularProjects" 
+        [project]="proj"
+        [attr.aria-label]="'Projekt: ' + proj.title">
+      </app-project-accordion>
     </div>
   </div>
 </section>
 
-<section class="section-container">
+<section class="section-container" aria-label="Fähigkeiten">
   <div class="content-container">
-      <h2 class="section-title mt-2">Meine Fähigkeiten</h2>
-    <app-skill-card [skillCategories]="skillCategories"></app-skill-card>
+    <h2 class="section-title mt-2">Meine Fähigkeiten</h2>
+    <app-skill-card 
+      [skillCategories]="skillCategories" 
+      aria-label="Liste meiner Fähigkeiten">
+    </app-skill-card>
   </div>
 </section>
