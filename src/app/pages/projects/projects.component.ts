@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Project } from './models/projects.model';
 import { AccordionModule } from 'primeng/accordion';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgClass } from '@angular/common';
@@ -17,7 +16,7 @@ import { SkillCardComponent } from './components/skills-card/skill-card/skill-ca
 
 
 export class ProjectsComponent {
-  privateProjects: Project[] = [
+  privateProjects: any[] = [
     {
       "title": "Entwicklung einer Benutzeroberfläche für einen Potentiostaten",
       "subtitle": "Bachelorarbeit im Studiengang Medizintechnik",
@@ -120,7 +119,7 @@ export class ProjectsComponent {
     
   ];
 
-  wordpressProjects: Project[] = [
+  wordpressProjects: any[] = [
     {
       title: 'Website für Sicherheitsunternehmen',
       subtitle: 'Professionelle und moderne Darstellung eines Sicherheitsunternehmens',
@@ -179,7 +178,7 @@ export class ProjectsComponent {
   ];
 
 
-  angularProjects: Project[] = [
+  angularProjects: any[] = [
     {
       title: 'Auftragsverwaltung Elektro',
       subtitle: 'Moderne Auftragsverwaltungssoftware für Elektrodienstleistungen',

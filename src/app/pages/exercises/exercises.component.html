@@ -1,24 +1,25 @@
+<main>
 <section class="section-container" aria-label="Übungsserienbereich">
   <div class="content-container">
-    <h2 class="section-title">Übungsserien</h2>
-    
+    <h1 class="section-title">Übungsserien</h1>
+
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8" role="list" aria-label="Liste der Übungsserien">
       <div 
         *ngFor="let serie of series" 
-        class="card hover:shadow-lg cursor-pointer"
+        class="exercise-card"
         [routerLink]="['/exercise', serie.id]"
         role="listitem"
-        [attr.aria-label]="'Serie ' + serie.id + ': ' + serie.description">
-        <h3 class="text-xl font-bold text-primary mb-3">
-          Serie {{serie.id}}
-        </h3>
-        <p class="info-value mb-4">{{serie.description}}</p>
+        [attr.aria-label]="'Serie ' + serie.id + ': ' + serie.description"
+      >
+        <h3 class="card-title">Serie {{ serie.id }}</h3>
+        <p class="info-value mb-4">{{ serie.description }}</p>
         <div class="flex flex-wrap gap-2" aria-label="Themen der Serie">
           <span *ngFor="let topic of serie.topics" class="badge">
-            {{topic}}
+            {{ topic }}
           </span>
         </div>
       </div>
     </div>
   </div>
 </section>
+</main>

@@ -1,40 +1,42 @@
 <section class="section-container">
- <div class="content-container">
-   <nav aria-label="Navigation">
-     <a routerLink="/exercise" class="badge mb-6" aria-label="Zurück zur Übersicht">Zurück zu den Übungsserien</a>
-   </nav>
-   
-   <div class="grid grid-cols-1 gap-8">
-     <article *ngFor="let task of exercises[currentId]?.tasks" class="card mt-16">
-       <h1 class="text-xl font-bold text-primary mb-3">Aufgabe {{task.id}}: {{task.title}}</h1>
-       
-       <div class="space-y-4">
-         <section aria-label="HTML Code">
-           <h2 class="info-label">HTML</h2>
-           <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto"><code class="language-html">{{task.html}}</code></pre>
-         </section>
+  <div class="content-container">
+    <nav aria-label="Navigation">
+      <a routerLink="/exercise" class="navigation-link" aria-label="Zurück zur Übersicht">
+        Zurück zu den Übungsserien
+      </a>
+    </nav>
 
-         <section aria-label="CSS Code">
-           <h2 class="info-label">CSS</h2>
-           <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto"><code class="language-css">{{task.css}}</code></pre>
-         </section>
+    <div class="grid grid-cols-1 gap-8">
+      <article *ngFor="let task of exercises[currentId]?.tasks" class="card mt-16">
+        <h1 class="card-title">Aufgabe {{ task.id }}: {{ task.title }}</h1>
 
-         <section *ngIf="task.js" aria-label="JavaScript Code">
-           <h2 class="info-label">JavaScript</h2>
-           <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto"><code class="language-javascript">{{task.js}}</code></pre>
-         </section>
+        <div class="space-y-4">
+          <section aria-label="HTML Code">
+            <h2 class="code-label">HTML</h2>
+            <pre class="code-preview"><code class="language-html">{{ task.html }}</code></pre>
+          </section>
 
-         <section *ngIf="task.workerJs" aria-label="Worker JavaScript Code">
-           <h2 class="info-label">Worker-JavaScript</h2>
-           <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto"><code class="language-javascript">{{task.workerJs}}</code></pre>
-         </section>
+          <section aria-label="CSS Code">
+            <h2 class="code-label">CSS</h2>
+            <pre class="code-preview"><code class="language-css">{{ task.css }}</code></pre>
+          </section>
 
-         <section *ngIf="task.md" aria-label="Markdown Content">
-           <h2 class="info-label">Markdown Dokument</h2>
-           <pre class="bg-gray-100 p-4 rounded-lg overflow-x-auto"><code class="language-markdown">{{task.md}}</code></pre>
-         </section>
-       </div>
-     </article>
-   </div>
- </div>
+          <section *ngIf="task.js" aria-label="JavaScript Code">
+            <h2 class="code-label">JavaScript</h2>
+            <pre class="code-preview"><code class="language-javascript">{{ task.js }}</code></pre>
+          </section>
+
+          <section *ngIf="task.workerJs" aria-label="Worker JavaScript Code">
+            <h2 class="code-label">Worker-JavaScript</h2>
+            <pre class="code-preview"><code class="language-javascript">{{ task.workerJs }}</code></pre>
+          </section>
+
+          <section *ngIf="task.md" aria-label="Markdown Content">
+            <h2 class="code-label">Markdown Dokument</h2>
+            <pre class="code-preview"><code class="language-markdown">{{ task.md }}</code></pre>
+          </section>
+        </div>
+      </article>
+    </div>
+  </div>
 </section>

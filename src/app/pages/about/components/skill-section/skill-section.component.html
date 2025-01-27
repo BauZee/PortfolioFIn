@@ -2,18 +2,18 @@
   <div class="content-container">
     <h2 class="section-title">Meine Online-Profile</h2>
 
-    <div class="card">
+    <div class="card transition-shadow duration-300">
       <div class="grid md:grid-cols-2 gap-8">
         <div *ngFor="let category of socialCategories">
           <h3 class="text-lg font-medium mb-8">{{ category.name }}</h3>
           <ul class="space-y-4" role="list">
             <li *ngFor="let link of category.links" role="listitem">
               <a [href]="link.url" 
-                 class="group flex items-center gap-4 text-gray-600 hover:text-primary w-full" 
+                 class="social-link" 
                  target="_blank"
                  rel="noopener noreferrer"
                  [attr.aria-label]="'Besuche mein Profil auf ' + link.platform">
-                <div class="w-8 flex justify-center items-center text-primary" aria-hidden="true">
+                <div class="social-icon" aria-hidden="true">
                   <fa-icon [icon]="link.icon" [fixedWidth]="true" size="lg"></fa-icon>
                 </div>
                 <span>{{ link.platform }}</span>

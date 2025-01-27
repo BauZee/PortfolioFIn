@@ -20,22 +20,17 @@ export class SeoService {
    * @param seoData Objekt mit SEO-Daten
    */
   setSeoData(seoData: any): void {
-    // Titel setzen
     if (seoData.title) {
       this.titleService.setTitle(seoData.title);
     }
-
-    // Meta-Beschreibung setzen
     if (seoData.description) {
       this.meta.updateTag({ name: 'description', content: seoData.description });
     }
 
-    // Meta-Keywords setzen (optional)
     if (seoData.keywords) {
       this.meta.updateTag({ name: 'keywords', content: seoData.keywords });
     }
 
-    // Open Graph Tags setzen
     if (seoData.og) {
       for (const key in seoData.og) {
         if (seoData.og.hasOwnProperty(key)) {
@@ -45,7 +40,6 @@ export class SeoService {
       }
     }
 
-    // Zusätzliche Meta-Tags für Bildattribute
     if (seoData.og) {
       if (seoData.og['image:alt']) {
         this.meta.updateTag({ property: 'og:image:alt', content: seoData.og['image:alt'] });
@@ -58,7 +52,6 @@ export class SeoService {
       }
     }
 
-    // Schema.org-Daten setzen (falls vorhanden)
     if (seoData.schema) {
       const existingSchema = this.document.querySelector('script[type="application/ld+json"]');
       if (existingSchema) {

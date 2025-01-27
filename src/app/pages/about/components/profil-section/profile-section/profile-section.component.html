@@ -1,15 +1,15 @@
 <section class="section-container">
   <div class="content-container">
     <h1 class="section-title">Wer bin ich?</h1>
-    
+
     <div class="flex flex-col md:flex-row gap-8">
       <div class="md:w-1/2 flex flex-col items-center">
-        <div class="relative group mb-8" role="img">
+        <div class="profile-image-wrapper group" role="img">
           <div class="glow-effect"></div>
           <img [src]="profileImage"
                [alt]="'Profilbild von ' + profilName"
                loading="lazy"
-               class="profile-image animate-flip group-hover:scale-105"/>
+               class="profile-image group-hover:scale-105" />
         </div>
 
         <p class="text-left max-w-md mb-8">
@@ -22,11 +22,11 @@
           </span>
         </div>
       </div>
-      
+
       <div class="md:w-1/2">
-        <div class="card mb-8">
+        <div class="card mb-8 transition-shadow duration-300">
           <h2 class="card-title">Informationen über mich</h2>
-          
+
           <div class="grid grid-cols-2 gap-8">
             <div class="space-y-4">
               <div *ngFor="let info of personalInfoLeft" class="flex flex-col">
@@ -40,28 +40,6 @@
                 <span class="info-value">{{ info.value }}</span>
               </div>
             </div>
-          </div>
-        </div>
-        
-        <div class="grid grid-cols-2 gap-8">
-          <div class="card">
-            <h2 class="card-title">Sprachen</h2>
-            <dl class="space-y-4">
-              <div *ngFor="let lang of languages" class="flex flex-col">
-                <span class="info-label">{{ lang.label }}:</span>
-                <span class="info-value">{{ lang.value }}</span>
-              </div>
-            </dl>
-          </div>
-          
-          <div class="card">
-            <h2 class="card-title">Werkstudentsstelle</h2>
-            <dl class="space-y-4">
-              <div *ngFor="let info of workInfo" class="flex flex-col">
-                <span class="info-label">{{ info.label }}:</span>
-                <span class="info-value">{{ info.value }}</span>
-              </div>
-            </dl>
           </div>
         </div>
       </div>

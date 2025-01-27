@@ -1,10 +1,9 @@
 <section class="section-container" id="projects" aria-label="Projekte">
-  <h2 class="section-title mt-2">Meine Projekte</h2>
+  <h1 class="section-title mt-2">Meine Projekte</h1>
 
-  <!-- Private Projekte -->
   <div class="content-container mb-16" id="private" aria-label="Private Projekte">
-    <h3 class="text-2xl font-bold text-gray-800 mb-8">Private Projekte</h3>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8" aria-label="Liste privater Projekte">
+    <h2 class="sub-section-title">Private Projekte</h2>
+    <div class="project-grid md:grid-cols-2" aria-label="Liste privater Projekte">
       <app-project-accordion 
         *ngFor="let proj of privateProjects" 
         [project]="proj"
@@ -13,10 +12,9 @@
     </div>
   </div>
 
-  <!-- WordPress Projekte -->
   <div class="content-container mb-16" id="wordpress" aria-label="WordPress Projekte">
-    <h3 class="text-2xl font-bold text-gray-800 mb-8">WordPress Projekte</h3>
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-6" aria-label="Liste von WordPress-Projekten">
+    <h2 class="sub-section-title">WordPress Projekte</h2>
+    <div class="project-grid md:grid-cols-2" aria-label="Liste von WordPress-Projekten">
       <app-project-accordion 
         *ngFor="let proj of wordpressProjects" 
         [project]="proj"
@@ -24,11 +22,10 @@
       </app-project-accordion>
     </div>
   </div>
-
-  <!-- Angular & Tailwind Projekte -->
+  
   <div class="content-container" id="angular" aria-label="Angular & Tailwind Projekte">
-    <h3 class="text-2xl font-bold text-gray-800 mb-8">Angular & Tailwind Projekte</h3>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8" aria-label="Liste von Angular- und Tailwind-Projekten">
+    <h2 class="sub-section-title">Angular & Tailwind Projekte</h2>
+    <div class="project-grid md:grid-cols-2" aria-label="Liste von Angular- und Tailwind-Projekten">
       <app-project-accordion 
         *ngFor="let proj of angularProjects" 
         [project]="proj"

@@ -1,120 +1,48 @@
-<section class="section-container" aria-label="Kontaktbereich">
-  <h1 class="section-title text-center">Kontakt</h1>
-  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" 
-        class="max-w-lg mx-auto p-6 bg-white rounded-2xl shadow-custom"
-        novalidate
-        aria-label="Kontaktformular">
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="form-container" novalidate aria-label="Kontaktformular">
+  <h2 id="contact-heading" class="form-heading">
+    Kontaktieren Sie mich
+  </h2>
+
+  <div *ngFor="let field of formFields" class="mb-5">
+    <label [for]="field.id" class="form-label">{{ field.label }}</label>
     
-    <!-- Formularüberschrift -->
-    <h2 id="contact-heading" class="text-2xl font-bold text-center text-primary mb-6">
-      Kontaktieren Sie mich
-    </h2>
-
-    <!-- Name -->
-    <div class="mb-5">
-      <label for="name" class="block font-medium text-primary mb-1">Name</label>
-      <input id="name" 
-             type="text" 
-             formControlName="name"
-             [ngClass]="{'border-red-500': submitted && contactForm.get('name')?.invalid}"
-             class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-colors"
-             placeholder="Ihr Name"
-             required
-             [attr.aria-invalid]="submitted && contactForm.get('name')?.invalid"
-             [attr.aria-describedby]="submitted && contactForm.get('name')?.invalid ? 'name-error' : null" />
-      <div *ngIf="submitted && contactForm.get('name')?.invalid" 
-           class="mt-1"
-           id="name-error"
-           role="alert">
-        <small class="text-red-600">Dies ist ein Pflichtfeld.</small>
-      </div>
-    </div>
-
-    <!-- Email -->
-    <div class="mb-5">
-      <label for="email" class="block font-medium text-primary mb-1">Email</label>
-      <input id="email" 
-             type="email" 
-             formControlName="email"
-             [ngClass]="{'border-red-500': submitted && contactForm.get('email')?.invalid}"
-             class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-colors"
-             placeholder="Ihre E-Mail-Adresse"
-             required
-             [attr.aria-invalid]="submitted && contactForm.get('email')?.invalid"
-             [attr.aria-describedby]="submitted && contactForm.get('email')?.invalid ? 'email-error' : null" />
-      <div *ngIf="submitted && contactForm.get('email')?.invalid" 
-           class="mt-1"
-           id="email-error"
-           role="alert">
-        <small class="text-red-600">
-          Bitte geben Sie eine gültige Email-Adresse ein. Dies ist ein Pflichtfeld.
-        </small>
-      </div>
-    </div>
-
-    <!-- Betreff -->
-    <div class="mb-5">
-      <label for="subject" class="block font-medium text-primary mb-1">Betreff</label>
-      <input id="subject" 
-             type="text" 
-             formControlName="subject"
-             [ngClass]="{'border-red-500': submitted && contactForm.get('subject')?.invalid}"
-             class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-colors"
-             placeholder="Betreff"
-             required
-             [attr.aria-invalid]="submitted && contactForm.get('subject')?.invalid"
-             [attr.aria-describedby]="submitted && contactForm.get('subject')?.invalid ? 'subject-error' : null" />
-      <div *ngIf="submitted && contactForm.get('subject')?.invalid" 
-           class="mt-1"
-           id="subject-error"
-           role="alert">
-        <small class="text-red-600">Dies ist ein Pflichtfeld.</small>
-      </div>
-    </div>
-
-    <!-- Nachricht -->
-    <div class="mb-6">
-      <label for="message" class="block font-medium text-primary mb-1">Nachricht</label>
-      <textarea id="message" 
-                formControlName="message" 
-                rows="5"
-                [ngClass]="{'border-red-500': submitted && contactForm.get('message')?.invalid}"
-                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-colors"
-                placeholder="Ihre Nachricht"
-                required
-                [attr.aria-invalid]="submitted && contactForm.get('message')?.invalid"
-                [attr.aria-describedby]="submitted && contactForm.get('message')?.invalid ? 'message-error' : null"></textarea>
-      <div *ngIf="submitted && contactForm.get('message')?.invalid" 
-           class="mt-1"
-           id="message-error"
-           role="alert">
-        <small class="text-red-600">Dies ist ein Pflichtfeld.</small>
-      </div>
-    </div>
-
-    <!-- Absenden-Button -->
-    <button type="submit"
-            class="w-full py-3 bg-primary text-white font-semibold rounded-lg hover:bg-purple-700 transition-colors"
-            [attr.aria-busy]="submitted">
-      Nachricht senden
-    </button>
+    <ng-container *ngIf="!field.isTextarea; else textareaTemplate">
+      <input 
+        [id]="field.id"
+        [type]="field.type"
+        formControlName="{{field.id}}"
+        [ngClass]="{'border-red-500': submitted && contactForm.get(field.id)?.invalid}"
+        class="form-input"
+        [placeholder]="field.placeholder"
+        required
+        [attr.aria-invalid]="submitted && contactForm.get(field.id)?.invalid"
+        [attr.aria-describedby]="submitted && contactForm.get(field.id)?.invalid ? field.id + '-error' : null" />
+    </ng-container>
     
-    <!-- Erfolgsnachricht -->
-    <div *ngIf="success" 
-         class="mt-6 flex items-center justify-center text-primary"
-         role="status"
-         aria-live="polite">
-      <svg class="w-6 h-6 mr-2" 
-           fill="none" 
-           stroke="currentColor" 
-           stroke-width="2" 
-           viewBox="0 0 24 24"
-           aria-hidden="true">
-        <path stroke-linecap="round" 
-              stroke-linejoin="round" 
-              d="M5 13l4 4L19 7"></path>
-      </svg>
-      <span class="font-medium">Erfolgreich abgesendet!</span>
+    <ng-template #textareaTemplate>
+      <textarea 
+        [id]="field.id"
+        formControlName="{{field.id}}"
+        [rows]="field.rows"
+        [ngClass]="{'border-red-500': submitted && contactForm.get(field.id)?.invalid}"
+        class="form-textarea"
+        [placeholder]="field.placeholder"
+        required
+        [attr.aria-invalid]="submitted && contactForm.get(field.id)?.invalid"
+        [attr.aria-describedby]="submitted && contactForm.get(field.id)?.invalid ? field.id + '-error' : null">
+      </textarea>
+    </ng-template>
+    
+    <div *ngIf="submitted && contactForm.get(field.id)?.invalid" class="form-error" [id]="field.id + '-error'" role="alert">
+      <small>{{ field.errorMessage }}</small>
     </div>
-  </form>
-</section>
+  </div>
+
+  <button type="submit" class="form-button" [attr.aria-busy]="submitted">
+    Nachricht senden
+  </button>
+  
+  <div *ngIf="success" class="form-success" role="status" aria-live="polite">
+    <span class="font-medium">Erfolgreich abgesendet!</span>
+  </div>
+</form>
