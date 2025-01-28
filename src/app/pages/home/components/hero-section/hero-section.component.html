@@ -1,15 +1,15 @@
 <section class="section-container" aria-label="Hero Bereich">
-  <div class="hero-container">
+  <div class="flex flex-col md:flex-row items-center justify-center md:justify-between">
     <div class="md:w-1/2 flex justify-center">
       <div class="w-full">
-        <h1 class="hero-title" aria-label="Willkommen auf meinem Portfolio">
+        <h1 class="text-4xl md:text-5xl font-bold whitespace-pre-line text-center" aria-label="Willkommen auf meinem Portfolio">
           {{ displayText }}
-          <span class="hero-title-blink" aria-hidden="true"></span>
+          <span class="border-r-4 border-primary ml-1 animate-blink" aria-hidden="true"></span>
         </h1>
       </div>
     </div>
-    <div class="hero-profile-wrapper group" [ngClass]="{'opacity-0': !showContent, 'opacity-100': showContent}" aria-label="Profilbild">
-      <div class="glow-effect" aria-hidden="true"></div>
+    <div class="md:w-1/2 flex justify-center relative transition-opacity duration-1000 group mt-8 md:mt-0" [ngClass]="{'opacity-0': !showContent, 'opacity-100': showContent}" aria-label="Profilbild">
+      <div aria-hidden="true"></div>
       <img
         src="assets/images/profile/profile-picture.png"
         alt="Profilbild von Erwin Bause"

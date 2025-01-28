@@ -24,5 +24,9 @@ export const appRoutes: Routes = [
   {
     path: 'exercise/:id',
     loadComponent: () => import('./pages/exercises/components/exercise-detail/exercise-detail.component').then(m => m.ExerciseDetailComponent),
+  },
+  {
+    path: 'report',
+    loadComponent: () => import('./pages/report/report.component').then(m => m.ReportComponent),
   }
 ];

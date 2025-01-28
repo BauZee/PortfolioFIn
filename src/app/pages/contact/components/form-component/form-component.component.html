@@ -1,7 +1,7 @@
-<form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="form-container" novalidate aria-label="Kontaktformular">
-  <h2 id="contact-heading" class="form-heading">
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="form-container mt-20" novalidate aria-label="Kontaktformular">
+  <h1 id="contact-heading" class="form-heading section-title">
     Kontaktieren Sie mich
-  </h2>
+  </h1>
 
   <div *ngFor="let field of formFields" class="mb-5">
     <label [for]="field.id" class="form-label">{{ field.label }}</label>

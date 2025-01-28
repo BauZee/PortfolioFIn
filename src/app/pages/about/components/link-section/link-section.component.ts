@@ -11,11 +11,11 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
-  selector: 'app-skill-section',
+  selector: 'app-link-section',
   imports: [CommonModule, FontAwesomeModule],
-  templateUrl: './skill-section.component.html',
-  styleUrls: ['./skill-section.component.css']})
-export class SkillSectionComponent {
+  templateUrl: './link-section.component.html',
+  styleUrls: ['./link-section.component.css']})
+export class LinkSectionComponent {
   socialCategories = [
     {
       name: 'Professional',
@@ -32,7 +32,7 @@ export class SkillSectionComponent {
         },
         {
           platform: 'Discord',
-          url: 'https://discord.gg/yourserver',
+          url: 'https://discord.gg/.bauzee',
           icon: faDiscord
         }
       ]
@@ -42,7 +42,7 @@ export class SkillSectionComponent {
       links: [
         {
           platform: 'Instagram',
-          url: 'https://instagram.com/yourusername',
+          url: 'https://instagram.com/ebause',
           icon: faInstagram
         },
         {

@@ -10,6 +10,8 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+  mobileMenuOpen = false;
+
   menuItems = [
     { 
       label: 'Home', 
@@ -18,6 +20,7 @@ export class HeaderComponent {
     { 
       label: 'Projekte', 
       link: '/projects',
+      isOpen: false,
       subItems: [
         { label: 'Private Projekte', link: '/projects#private'},
         { label: 'WordPress Projekte', link: '/projects#wordpress'},
@@ -27,6 +30,7 @@ export class HeaderComponent {
     {
       label: 'Übungsserien',
       link: '/exercise',
+      isOpen: false,
       subItems: Array.from({ length: 9 }, (_, i) => ({
         label: `Serie ${i + 1}`,
         link: `/exercise/${i + 1}`
@@ -42,9 +46,23 @@ export class HeaderComponent {
     }
   ];
 
-  mobileMenuOpen = false;
-
   toggleMobileMenu() {
     this.mobileMenuOpen = !this.mobileMenuOpen;
+  }
+  
+  closeMobileMenu() {
+    this.mobileMenuOpen = false;
+    this.menuItems.forEach(item => item.isOpen = false);
+  }
+  
+  toggleSubMenu(item: any) {
+    this.menuItems.forEach(menuItem => {
+      if (menuItem !== item) {
+        menuItem.isOpen = false;
+      }
+    });
+    
+    // Toggle des aktuellen Untermenüs
+    item.isOpen = !item.isOpen;
   }
 }

@@ -17,9 +17,6 @@ export class ContactComponent implements OnInit{
 
   ngOnInit() {
     this.setMetaTags();
-    setTimeout(() => {
-      this.showContent = true;
-    }, 5000);
   }
 
   private setMetaTags(): void {

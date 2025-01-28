@@ -1,0 +1,92 @@
+<div class="max-w-4xl mx-auto py-20 px-4">
+    <h1 class="text-4xl font-bold text-center text-primary mb-12">Bericht: Portfolio-Webseite</h1>
+    
+    <!-- Einleitung und Projektübersicht -->
+    <div class="bg-white border border-purple-500 rounded-lg shadow-md p-6 mb-6">
+      <h2 class="text-2xl font-semibold text-secondary mb-4">Einleitung und Projektübersicht</h2>
+      <p>
+        Für mein persönliches Portfolio-Projekt habe ich mich entschieden, eine Webseite mit dem Framework <strong>Angular</strong> zu entwickeln. Der Hauptgrund für diese Wahl ist meine berufliche Erfahrung mit Angular bei der <strong>Exxeta AG</strong>, wo ich das Framework täglich einsetze. Da ich Angular beruflich nutze und auch sehr gerne mag, wollte ich nun auch mal ein privates Projekt mithilfe dieses Frameworks realisieren und neue Dinge ausprobieren bzw. Sachen umsetzen, die ich auf der Arbeit nicht so realisieren kann.
+      </p>
+      <p class="mt-4">
+        Das Ziel war es, eine ansprechende und funktionale Webseite zu erstellen, die meine Fähigkeiten und Projekte übersichtlich präsentiert. Dabei wollte ich moderne Webentwicklungstechnologien nutzen, um sowohl die Benutzererfahrung als auch die Performance zu optimieren. Neben Angular spielte auch <strong>TailwindCSS</strong> eine zentrale Rolle im Designprozess, da es eine flexible und effiziente Gestaltung ermöglichte.
+      </p>
+    </div>
+    
+    <!-- Projektstruktur -->
+    <div class="bg-white border border-purple-500 rounded-lg shadow-md p-6 mb-6">
+      <h2 class="text-2xl font-semibold text-secondary mb-4">Projektstruktur</h2>
+      <p>
+        Die Struktur des Projekts ist klar und übersichtlich gestaltet, um die Wartbarkeit und Erweiterbarkeit der Webseite vielleicht mal in der Zukunft zu gewährleisten, um weitere Seiten einzupflegen, zu leichten und schnelleren Anpassungen zu machen oder auch mal ein Backend mit einzubinden.
+      </p>
+      <ul class="list-disc list-inside mt-4">
+        <li><strong>Verzeichnisaufbau:</strong></li>
+        <ul class="list-disc list-inside ml-6 mt-2">
+          <li><code>src/app/pages</code>: Enthält alle Hauptseiten der Webseite wie Home, About, Projects und Report.</li>
+          <li><code>src/app/pages/components</code>: Jede Seite verfügt über eigene Komponenten, die in diesem Ordner abgelegt sind. Dies fördert die Modularität und Wiederverwendbarkeit der Komponenten.</li>
+          <li><code>src/app/data</code>: Hier speichere ich zentrale Daten in JSON- oder TypeScript-Dateien. Diese Daten werden dynamisch mit der <strong>NgFor-Direktive</strong> in die HTML-Struktur integriert, was den Code schlanker und flexibler macht.</li>
+          <li><code>src/app/seo-data</code>: Enthält alle SEO-relevanten Informationen wie Meta-Beschreibungen, Keywords und Open-Graph-Daten für jede Seite.</li>
+        </ul>
+      </ul>
+      <p class="mt-4">
+        Diese klare Trennung der Verantwortlichkeiten innerhalb des Projekts erleichtert die Navigation im Code und die spätere Erweiterung der Webseite.
+      </p>
+    </div>
+    
+    <!-- Eingesetzte Medienformate -->
+    <div class="bg-white border border-purple-500 rounded-lg shadow-md p-6 mb-6">
+      <h2 class="text-2xl font-semibold text-secondary mb-4">1. Eingesetzte Medienformate</h2>
+      
+      <h3 class="text-xl font-semibold text-primary mb-2">Bilder</h3>
+      <ul class="list-disc list-inside space-y-1">
+        <li><strong>WebP-Format:</strong> Ich habe mich für das WebP-Format entschieden, da es eine geringere Dateigröße im Vergleich zu JPEG oder PNG bietet, ohne die Bildqualität sichtbar zu beeinträchtigen. Dies sorgt für schnellere Ladezeiten und verbessert die Performance der Webseite.</li>
+        <li><strong>Lazy Loading:</strong> Alle Bilder werden erst geladen, wenn sie in den sichtbaren Bereich des Nutzers gelangen. Diese Technik reduziert die initiale Ladezeit erheblich und sorgt für eine flüssigere Benutzererfahrung, besonders auf mobilen Geräten.</li>
+      </ul>
+      
+      <h3 class="text-xl font-semibold text-primary mt-4 mb-2">Interaktive Elemente</h3>
+      <ul class="list-disc list-inside space-y-1">
+        <li><strong>Dropdown-Menüs:</strong> Diese sorgen für eine übersichtliche und saubere Navigation. Sie sind sowohl auf Desktop- als auch auf mobilen Geräten implementiert, was die Benutzerfreundlichkeit erhöht.</li>
+        <li><strong>Formularvalidierungen:</strong> Im Kontaktformular prüfe ich, ob alle Eingaben korrekt sind, bevor sie abgeschickt werden können. Dies verhindert Fehler bei der Dateneingabe und verbessert die Benutzererfahrung.</li>
+        <li><strong>Animationen:</strong> Kleine Animationen, wie das Blinken eines Cursors im Hero-Bereich oder das sanfte Einblenden von Karten und Bildern, verleihen der Webseite ein modernes und dynamisches Gefühl, ohne die Performance negativ zu beeinflussen.</li>
+        <li><strong>Karten und Akkordeons:</strong> Projektdaten werden in ansprechenden Karten und Akkordeons dargestellt. Diese Strukturen helfen dabei, umfangreiche Informationen übersichtlich zu präsentieren und erleichtern die Navigation durch die Inhalte.</li>
+      </ul>
+    </div>
+    
+    <!-- Ausgewähltes Layout-Design -->
+    <div class="bg-white border border-purple-500 rounded-lg shadow-md p-6 mb-6">
+      <h2 class="text-2xl font-semibold text-secondary mb-4">2. Ausgewähltes Layout-Design</h2>
+      
+      <h3 class="text-xl font-semibold text-primary mb-2">Farbschema</h3>
+      <ul class="list-disc list-inside space-y-1">
+        <li><strong>Primärfarbe – Lila (#8800ff):</strong> Lila ist meine persönliche Lieblingsfarbe und symbolisiert Kreativität sowie Individualität. Diese Farbe dient als Hauptakzent auf der Webseite und verleiht ihr eine einzigartige visuelle Identität.</li>
+        <li><strong>Kontrastfarbe – Weiß:</strong> Weiß sorgt für einen klaren und sauberen Hintergrund, der die Lesbarkeit maximiert und die Inhalte hervorhebt.</li>
+        <li><strong>Akzentfarben – Orange (#ff8800) und Grün (#38c172):</strong> Diese Farben werden verwendet, um wichtige Elemente wie Buttons und Benachrichtigungen hervorzuheben. Sie sorgen für visuelle Kontraste und lenken die Aufmerksamkeit der Nutzer gezielt.</li>
+      </ul>
+      
+      <h3 class="text-xl font-semibold text-primary mt-4 mb-2">Typografie</h3>
+      <ul class="list-disc list-inside space-y-1">
+        <li><strong>Schriftarten:</strong> Ich habe serifenlose Schriftarten gewählt, um eine moderne und gut lesbare Typografie zu gewährleisten. Überschriften sind in einer fetteren Schriftart gestaltet, um Hierarchien klar darzustellen.</li>
+        <li><strong>Lesbarkeit:</strong> Durch großzügige Zeilenabstände und angemessene Schriftgrößen wird die Lesbarkeit auf allen Geräten verbessert, was besonders für mobile Nutzer wichtig ist.</li>
+      </ul>
+      
+      <h3 class="text-xl font-semibold text-primary mt-4 mb-2">Layout-Struktur</h3>
+      <ul class="list-disc list-inside space-y-1">
+        <li><strong>Flexbox und CSS Grid:</strong> Für das Layout nutze ich eine Kombination aus Flexbox und CSS Grid. Flexbox eignet sich hervorragend für die Anordnung von Elementen in der Navigation und innerhalb von Karten, während CSS Grid für komplexere Layouts wie das Raster zur Projektdarstellung eingesetzt wird. Diese Kombination ermöglicht ein flexibles und responsives Design, das sich an verschiedene Bildschirmgrößen anpasst.</li>
+        <li><strong>Responsive Design:</strong> Mit TailwindCSS-Breakpoints (z.B. <code>md</code>, <code>lg</code>) stelle ich sicher, dass sich die Webseite nahtlos an unterschiedliche Geräte und Bildschirmgrößen anpasst. Dies garantiert eine konsistente Benutzererfahrung, egal ob die Seite auf einem Smartphone, Tablet oder Desktop angezeigt wird.</li>
+      </ul>
+      
+      <h3 class="text-xl font-semibold text-primary mt-4 mb-2">TailwindCSS und Konfigurationsdatei</h3>
+      <ul class="list-disc list-inside space-y-1">
+        <li><strong>Utility-First-Philosophie:</strong> TailwindCSS ermöglicht es mir, CSS-Klassen direkt im HTML zu verwenden, was die Entwicklung beschleunigt und den Code übersichtlicher hält.</li>
+        <li><strong>Zentrale Konfigurationsdatei (<code>tailwind.config.ts</code>):</strong> In dieser Datei habe ich verschiedene Stile definiert, sowohl globale wie Farben, Schriftarten und Abstände, als auch spezifische Klassen für einzelne Seiten oder Komponenten. Diese Trennung fördert die Wiederverwendbarkeit, verbessert die Lesbarkeit des Codes und gewährleistet eine konsistente Gestaltung über die gesamte Webseite hinweg.</li>
+      </ul>
+    </div>
+    
+    <!-- Fazit -->
+    <div class="bg-white border border-purple-500 rounded-lg shadow-md p-6">
+      <h2 class="text-2xl font-semibold text-secondary mb-4">Fazit</h2>
+      <p>
+        Die sorgfältige Auswahl der eingesetzten Medienformate und des Layout-Designs hat wesentlich dazu beigetragen, dass meine Portfolio-Webseite sowohl optisch ansprechend als auch funktional ist. Durch die Nutzung von Angular und TailwindCSS konnte ich ein flexibles und skalierbares Design umsetzen, das sich nahtlos an verschiedene Geräte und Bildschirmgrößen anpasst. Die gewählten Farben und Typografie sorgen für eine klare visuelle Hierarchie und verbessern die Lesbarkeit, während interaktive Elemente die Benutzererfahrung bereichern. Insgesamt bin ich zufrieden mit dem Ergebnis und freue mich darauf, die Webseite weiter zu optimieren und zu erweitern.
+      </p>
+    </div>
+  </div>
+  

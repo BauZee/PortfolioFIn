@@ -1,21 +1,20 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/**/*.{html,ts}", // Erfasst alle relevanten Dateien
+    "./src/**/*.{html,ts}", 
   ],
   theme: {
     extend: {
       colors: {
-        primary: '#8800ff', // Primärfarbe
-        secondary: '#ff8800', // Sekundärfarbe
-        danger: '#e3342f', // Für Fehlermeldungen oder kritische Aktionen
-        success: '#38c172', // Für Erfolgsmeldungen
-        textPrimary: '#333333', // Standardtextfarbe
-        lightGray: '#f9fafb', // Für Code-Previews
+        primary: '#8800ff',
+        danger: '#e3342f',
+        success: '#38c172',
+        textPrimary: '#000000',
+        lightGray: '#f9fafb',
       },
       boxShadow: {
         custom: '0 36px 0 -30px #fff, -36px 0 0 -30px #fff, 0 -36px 0 -30px #fff, 36px 0 0 -30px #fff, 0 0 0 5px #8800ff',
-        glow: '0 0 40px rgba(136, 0, 255, 0.3)', // Fliederfarbener Glow-Effekt
+        glow: '0 0 40px rgba(136, 0, 255, 0.3)',
       },
       animation: {
         fadeIn: 'fadeIn 1s ease-out forwards',
@@ -42,151 +41,139 @@ module.exports = {
   plugins: [
     function ({ addComponents }) {
       addComponents({
-        // **Globale Layouts und Sektionen**
+        // Allgemeine Layouts und Abschnitte
         '.section-container': {
           '@apply py-20': {},
         },
         '.section-title': {
           '@apply text-4xl font-bold text-textPrimary text-center mb-8': {},
         },
-        '.sub-section-title': {
-          '@apply text-2xl text-center font-bold text-gray-800 mb-8': {},
-        },
         '.content-container': {
           '@apply container mx-auto px-6': {},
         },
 
-        // **Karten und Projekte**
+        // Karten und wiederverwendbare Komponenten
         '.card': {
-          '@apply bg-white rounded-2xl shadow-custom p-6 transition-shadow duration-300 hover:shadow-glow': {}, // Standardkarte mit Hover-Effekt
+          '@apply bg-white rounded-2xl shadow-custom p-6 transition-shadow duration-300 hover:shadow-glow': {},
         },
-        '.card-header': {
-          '@apply flex justify-between items-center': {}, // Header für Akkordeon-Karten
-        },
-        '.project-card': {
-          '@apply card group cursor-pointer': {}, // Karte für Projekte
+        '.exercise-card': {
+          '@apply card cursor-pointer': {},
         },
         '.card-title': {
-          '@apply text-xl font-bold text-primary mb-3': {}, // Titel in Karten
+          '@apply text-xl font-bold text-primary mb-3': {},
         },
         '.card-content': {
-          '@apply text-gray-600': {}, // Standardtext in Karten
-        },
-        '.accordion-content': {
-          '@apply transition-all duration-300 overflow-hidden': {}, // Animation für Akkordeon-Inhalte
+          '@apply text-black': {},
         },
 
-        '.project-grid': {
-          '@apply grid grid-cols-1 gap-8': {}, // Basis-Grid für Projekte
+        // Social Links (Seite: Über mich / Projekte)
+        '.social-link': {
+          '@apply flex items-center gap-4 hover:text-primary w-full': {},
+        },
+        '.social-icon': {
+          '@apply w-8 flex justify-center items-center text-primary': {},
         },
 
-        '.accordion-content': {
-          '@apply transition-all duration-300 overflow-hidden': {}, // Animierte Inhalte für Akkordeon
-        },
-        '.card-header': {
-          '@apply flex justify-between items-center': {}, // Header von Akkordeon-Karten
-        },
-        '.accordion-title': {
-          '@apply text-xl font-semibold text-primary': {}, // Titel in Akkordeons
-        },
-
-
-        // **Badges und Technologien**
+        // Badges (Seitenübergreifend)
         '.badge': {
-          '@apply bg-primary/10 text-primary px-4 py-2 rounded-full text-sm': {}, // Badges
-        },
-        '.technology-badge': {
-          '@apply px-3 py-1 bg-primary/10 text-primary rounded-full text-sm': {}, // Technologien-Badges
+          '@apply bg-primary/10 text-primary px-4 py-2 rounded-full': {},
         },
 
-        // **Skill-Übersicht**
-        '.skill-category': {
-          '@apply text-xl font-semibold text-primary mb-4': {}, // Kategorie-Titel
+        // Dropdown-Menü (Navigation / Mobile Menü)
+        '.dropdown-menu': {
+          '@apply absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200': {},
         },
-        '.skill-list': {
-          '@apply space-y-2': {}, // Liste der Fähigkeiten
-        },
-        '.skill-item': {
-          '@apply flex items-center gap-2': {}, // Einzelne Fähigkeit
+        '.dropdown-item': {
+          '@apply block px-4 py-2 info-value hover:text-primary hover:bg-primary/10': {},
         },
 
-        // **Profilbereich**
-        '.profile-image-wrapper': {
-          '@apply relative mb-8': {}, // Profilbild-Wrapper
+        // Mobile Menü
+        '.mobile-menu': {
+          '@apply md:hidden fixed inset-0 bg-white z-40 overflow-y-auto': {},
         },
+        '.mobile-menu-item': {
+          '@apply block py-2 px-8 hover:bg-primary/10 info-value': {},
+        },
+        '.dropdown-toggle': {
+          '@apply text-primary pl-4': {},
+        },
+        '.mobile-submenu': {
+          '@apply bg-gray-50': {},
+        },
+        '.desktop-menu-link': {
+          '@apply info-value hover:text-primary px-3 py-2': {},
+        },
+        '.info-value': {
+          '@apply text-gray-700 hover:text-primary': {},
+        },
+
+        // Code-Previews (Seite: Übungsserien)
+        '.code-preview': {
+          '@apply bg-lightGray p-4 rounded-lg overflow-x-auto': {},
+        },
+        '.code-label': {
+          '@apply text-primary font-medium': {},
+        },
+
+        // Profilbereich (Seite: Über mich)
         '.profile-image': {
-          '@apply w-64 h-64 object-cover rounded-full border-4 border-primary shadow-lg animate-flip': {}, // Profilbild
+          '@apply w-64 h-64 object-cover rounded-full border-4 border-primary shadow-lg animate-flip': {},
         },
 
-        // **Hero-Bereich**
-        '.hero-container': {
-          '@apply flex flex-col md:flex-row items-center justify-center md:justify-between': {},
-        },
-        '.hero-title': {
-          '@apply text-4xl md:text-5xl font-bold whitespace-pre-line text-center': {},
-        },
-        '.hero-title-blink': {
-          '@apply border-r-4 border-primary ml-1 animate-blink': {}, // Blinken
-        },
+        // Hero-Bereich (Startseite)
         '.hero-profile-wrapper': {
-          '@apply md:w-1/2 flex justify-center relative transition-opacity duration-1000': {}, // Ohne group
+          '@apply md:w-1/2 flex justify-center relative transition-opacity duration-1000': {},
         },
         '.hero-profile-image': {
-          '@apply w-64 h-64 object-cover rounded-full border-4 border-primary shadow-lg': {}, // Profilbild selbst
+          '@apply w-64 h-64 object-cover rounded-full border-4 border-primary shadow-lg': {},
         },
 
-        // **Navigation und Footer**
+        // Navigation und Footer
         '.navigation-grid': {
-          '@apply w-full max-w-6xl grid grid-cols-1 md:grid-cols-4 gap-8': {}, // Grid-Layout für Karten
+          '@apply w-full max-w-6xl grid grid-cols-1 md:grid-cols-4 gap-8': {},
         },
         '.navigation-card': {
-          '@apply card focus:ring-2 focus:ring-primary focus:outline-none': {}, // Standard für Karten
+          '@apply card focus:ring-2 focus:ring-primary focus:outline-none': {},
         },
         '.navigation-card-content': {
-          '@apply text-lg font-medium text-gray-800 text-center': {}, // Inhalt der Karten
+          '@apply text-lg font-medium text-center': {},
         },
         '.navigation-link': {
-          '@apply badge mb-6': {}, // Navigation Badge
+          '@apply badge mb-6': {},
         },
 
-        // **Formulare**
+        // Formulare (Seite: Kontakt)
         '.form-container': {
-          '@apply max-w-lg mx-auto p-6 bg-white rounded-2xl shadow-custom': {}, // Formularwrapper
+          '@apply max-w-lg mx-auto p-6 bg-white rounded-2xl shadow-custom': {},
         },
         '.form-label': {
-          '@apply block font-medium text-primary mb-2': {}, // Labels
+          '@apply block font-medium text-primary mb-2': {},
         },
         '.form-input': {
-          '@apply w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-colors': {}, // Input-Felder
+          '@apply w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-colors': {},
         },
         '.form-textarea': {
-          '@apply w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-colors': {}, // Textarea-Felder
+          '@apply w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-colors': {},
         },
         '.form-button': {
-          '@apply w-full py-3 bg-primary text-white font-semibold rounded-lg hover:bg-purple-700 transition-colors': {}, // Submit-Button
+          '@apply w-full py-3 bg-primary text-white font-semibold rounded-lg hover:bg-purple-700 transition-colors': {},
         },
         '.form-error': {
-          '@apply mt-1 text-sm text-danger': {}, // Fehlermeldungen
+          '@apply mt-1 text-sm text-danger': {},
         },
 
-        // **Buttons**
+        // Buttons (Seitenübergreifend)
         '.btn-primary': {
-          '@apply bg-primary text-white py-2 px-4 rounded-lg hover:bg-purple-700 transition-colors': {}, // Standardbutton
+          '@apply bg-primary text-white py-2 px-4 rounded-lg hover:bg-purple-700 transition-colors': {},
         },
         '.btn-secondary': {
-          '@apply bg-secondary text-white py-2 px-4 rounded-lg hover:bg-orange-600 transition-colors': {}, // Sekundärbutton
+          '@apply bg-secondary text-white py-2 px-4 rounded-lg hover:bg-orange-600 transition-colors': {},
         },
         '.btn-danger': {
-          '@apply bg-danger text-white py-2 px-4 rounded-lg hover:bg-red-700 transition-colors': {}, // Fehlerbutton
+          '@apply bg-danger text-white py-2 px-4 rounded-lg hover:bg-red-700 transition-colors': {},
         },
 
-        // **Footer**
-        '.footer-container': {
-          '@apply bg-gray-800 text-white py-6': {}, // Footerbereich
-        },
-        '.footer-link': {
-          '@apply text-primary hover:underline': {}, // Footerlinks
-        },
+
       });
     },
   ],

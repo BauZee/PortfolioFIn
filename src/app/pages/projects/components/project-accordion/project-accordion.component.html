@@ -1,21 +1,23 @@
 <div class="card h-full" [ngClass]="{'md:col-span-2': isOpen}" aria-label="Projekt-Accordion">
-  <div class="card-header cursor-pointer" (click)="toggle()" [attr.aria-expanded]="isOpen">
+  <div class="flex justify-between items-center cursor-pointer" (click)="toggle()" [attr.aria-expanded]="isOpen">
     <div>
-      <h4 class="accordion-title">{{ project.title }}</h4>
+      <h4 class="text-xl font-semibold text-primary">{{ project.title }}</h4>
       <p class="text-gray-600">{{ project.subtitle }}</p>
     </div>
     <span class="text-primary transition-transform duration-300" [ngClass]="{'rotate-180': isOpen}">
       ▼
     </span>
   </div>
-
-  <div class="accordion-content" [ngClass]="{'h-0 opacity-0': !isOpen, 'h-auto opacity-100 mt-4': isOpen}">
-    <div class="mb-4">
+  
+  <div class="transition-all duration-300 overflow-hidden" [ngClass]="{'h-0 opacity-0': !isOpen, 'h-auto opacity-100 mt-4': isOpen}">
+    <!-- Bild nur anzeigen, wenn vorhanden -->
+    <div class="mb-4" *ngIf="project.image">
       <img 
         [src]="project.image" 
         [alt]="project.title + ' Bild'" 
         class="w-full h-full object-contain rounded-lg" />
     </div>
+    
     <div>
       <p class="text-gray-600">{{ project.description }}</p>
       <ul class="list-disc list-inside text-gray-600 mt-4 space-y-1" [attr.aria-label]="'Details zu ' + project.title">
@@ -23,7 +25,7 @@
       </ul>
     </div>
     <div *ngIf="project.technologies?.length" class="mt-6 flex flex-wrap gap-2 justify-center" [attr.aria-label]="'Technologien für ' + project.title">
-      <span *ngFor="let tech of project.technologies" class="badge">
+      <span *ngFor="let tech of project.technologies" class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">
         {{ tech }}
       </span>
     </div>
