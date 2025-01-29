@@ -14,6 +14,7 @@
         src="assets/images/profile/profile-picture.png"
         alt="Profilbild von Erwin Bause"
         class="hero-profile-image"
+        [ngClass]="{'animate-flip': isFlipping}"
         loading="lazy"
       />
     </div>

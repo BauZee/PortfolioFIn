@@ -10,7 +10,7 @@ module.exports = {
         danger: '#e3342f',
         success: '#38c172',
         textPrimary: '#000000',
-        lightGray: '#f9fafb',
+        lightGray: '#000000',
       },
       boxShadow: {
         custom: '0 36px 0 -30px #fff, -36px 0 0 -30px #fff, 0 -36px 0 -30px #fff, 36px 0 0 -30px #fff, 0 0 0 5px #8800ff',
@@ -104,7 +104,7 @@ module.exports = {
           '@apply info-value hover:text-primary px-3 py-2': {},
         },
         '.info-value': {
-          '@apply text-gray-700 hover:text-primary': {},
+          '@apply hover:text-primary': {},
         },
 
         // Code-Previews (Seite: Übungsserien)

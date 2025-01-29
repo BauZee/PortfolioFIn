@@ -103,7 +103,7 @@ export const privateProjects: any[] = [
   export const wordpressProjects: any[] = [
     {
       title: 'Website für Sicherheitsunternehmen',
-      description: 'Entwicklung einer modernen und übersichtlichen Website für ein Sicherheitsunternehmen. Die Seite bietet eine klare Struktur und umfassende Informationen.',
+      description: 'Entwicklung einer Website für ein Sicherheitsunternehmen.',
       details: [
         'Startseite mit ansprechendem Design',
         'Kontaktformular zur direkten Kundenanfrage',
@@ -116,7 +116,7 @@ export const privateProjects: any[] = [
     {
       title: 'Website für eine Autowaschanlage',
       image: '',
-      description: 'Erstellung einer attraktiven Website, die die Dienstleistungen und Preise der Autowaschanlage klar darstellt.',
+      description: 'Erstellung einer Website, die die Dienstleistungen und Preise der Autowaschanlage klar darstellt.',
       details: [
         'Startseite mit allen wichtigen Informationen',
         'Abschnitt "Über uns" zur Vorstellung des Unternehmens',
@@ -129,7 +129,7 @@ export const privateProjects: any[] = [
     {
       title: 'Website für weiteres Sicherheitsunternehmen',
       image: '',
-      description: 'Entwicklung einer Website für ein Sicherheitsunternehmen mit Fokus auf klarer Navigation und modernem Design.',
+      description: 'Entwicklung einer Website für ein Sicherheitsunternehmen.',
       details: [
         'Startseite mit Unternehmensvorstellung',
         'Kontaktformular und Standortkarte',

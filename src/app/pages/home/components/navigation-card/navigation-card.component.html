@@ -3,7 +3,7 @@
     <a
       *ngFor="let card of navigationCards"
       [href]="card.href"
-      class="navigation-card group"
+      class="navigation-card group transition-opacity duration-1000 ease-in-out"
       [attr.aria-label]="card.question"
       [ngClass]="{'opacity-0': !showContent, 'opacity-100': showContent}"
     >

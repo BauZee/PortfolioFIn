@@ -6,10 +6,10 @@
       <div class="grid md:grid-cols-2 gap-8">
         <div *ngFor="let category of socialCategories">
           <h3 class="text-lg font-medium mb-8">{{ category.name }}</h3>
-          <ul class="space-y-4" role="list">
-            <li *ngFor="let link of category.links" role="listitem">
+          <ul class="space-y-4">
+            <li *ngFor="let link of category.links">
               <a [href]="link.url" 
-                 class="social-link flex items-center gap-4 text-gray-600 hover:text-primary w-full" 
+                 class="social-link flex items-center gap-4 hover:text-primary w-full" 
                  target="_blank"
                  rel="noopener noreferrer"
                  [attr.aria-label]="'Besuche mein Profil auf ' + link.platform">

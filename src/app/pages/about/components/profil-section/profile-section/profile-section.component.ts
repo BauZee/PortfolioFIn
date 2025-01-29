@@ -14,12 +14,10 @@ export class ProfileSectionComponent {
 
   
 aboutText = 'Mein Name ist Erwin Bause, ich studiere Informatik im dritten Semester und arbeite als Werkstudent bei der Exxeta AG im Bereich Front-End Entwicklung. ' +
-            'Meine Faszination für Technik und Medizin führte mich nach dem Abitur mit technischem Schwerpunkt zunächst zum Medizintechnikstudium. ' +
-            'Dort entdeckte ich meine Begeisterung für Informatik und Programmierung wieder und entschied mich für ein weiteres Studium der Informatik. ' +
-            'In meiner Freizeit widme ich mich technischen Projekten, Camping, Fahrradtouren oder Reparaturen in der Fahrradwerkstatt. ' +
+            'Meine Faszination für Technik und Medizin führte mich nach dem Abitur mit technischem Schwerpunkt zunächst zum Medizintechnikstudium, um beide Interessensgebiete zu vereinen. ' +
+            'Dort entdeckte ich meine Begeisterung für Informatik und Programmierung wieder und entschied mich nach dem Abschluss für ein weiteres Studium der Informatik. ' +
+            'In meiner Freizeit widme ich mich entweder technischen Projekten oder begebe mich in die Natur - Camping, Fahrradtouren oder Reparaturen in der Fahrradwerkstatt. ' +
             'Zu meinen Interessen zählen: ';
-
-
           
   
   hobbies = ['Camping', 'Softwarearchitektur', 'Programmieren', 'Fahrradtouren und -reparaturen', 'Front End Entwicklung', 'Konzerte/Festivals/Clubs'];
@@ -27,7 +25,7 @@ aboutText = 'Mein Name ist Erwin Bause, ich studiere Informatik im dritten Semes
   personalInfoLeft = [
     { label: 'Name', value: 'Erwin Bause' },
     { label: 'E-Mail', value: 'erwinbause23@gmail.com' },
-    { label: 'Experience', value: '2 Years' }
+    { label: 'Alter', value: '24' }
   ];
 
   personalInfoRight = [
@@ -44,7 +42,7 @@ aboutText = 'Mein Name ist Erwin Bause, ich studiere Informatik im dritten Semes
 
   workInfo = [
     { label: 'Position', value: 'Frontend Developer' },
-    { label: 'Arbeitszeit', value: '15h/Week - Hybrid' },
+    { label: 'Arbeitszeit', value: '15h/Woche - Hybrid' },
     { label: 'Unternehmen', value: 'EXXETA AG' }
   ];
 }

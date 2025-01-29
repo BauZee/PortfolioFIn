@@ -33,7 +33,7 @@
       </textarea>
     </ng-template>
     
-    <div *ngIf="submitted && contactForm.get(field.id)?.invalid" class="form-error" [id]="field.id + '-error'" role="alert">
+    <div *ngIf="submitted && contactForm.get(field.id)?.invalid" class="form-error" [id]="field.id + '-error'">
       <small>{{ field.errorMessage }}</small>
     </div>
   </div>
@@ -42,7 +42,7 @@
     Nachricht senden
   </button>
   
-  <div *ngIf="success" class="form-success" role="status" aria-live="polite">
+  <div *ngIf="success" class="form-success" aria-live="polite">
     <span class="font-medium">Erfolgreich abgesendet!</span>
   </div>
 </form>

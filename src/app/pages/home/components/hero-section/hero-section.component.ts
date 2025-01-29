@@ -42,7 +42,7 @@ export class HeroSectionComponent implements OnInit {
       setTimeout(() => {
         this.isFlipping = false;
       }, 1000);
-    }, 5000);
+    }, 3500);
   }
 
   private typeText(text: string): Promise<void> {

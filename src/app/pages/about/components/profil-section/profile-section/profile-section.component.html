@@ -4,7 +4,7 @@
 
     <div class="flex flex-col md:flex-row gap-8">
       <div class="md:w-1/2 flex flex-col items-center">
-        <div class="profile-image-wrapper group" role="img">
+        <div class="profile-image-wrapper group">
           <div class="glow-effect"></div>
           <img [src]="profileImage"
                [alt]="'Profilbild von ' + profilName"
@@ -12,12 +12,12 @@
                class="profile-image group-hover:scale-105" />
         </div>
 
-        <p class="text-left max-w-md mb-8">
+        <p class="text-left max-w-md mb-8 mt-8">
           {{ aboutText }}
         </p>
 
-        <div class="flex flex-wrap justify-center gap-4" role="list" aria-label="Hobbies">
-          <span *ngFor="let hobby of hobbies" class="badge" role="listitem">
+        <div class="flex flex-wrap justify-center gap-4" aria-label="Hobbies">
+          <span *ngFor="let hobby of hobbies" class="badge">
             {{ hobby }}
           </span>
         </div>
