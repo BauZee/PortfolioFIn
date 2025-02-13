@@ -2,34 +2,32 @@
   <h1 class="section-title mt-2">Meine Projekte</h1>
 
   <!-- Private Projekte -->
-  <div class="content-container mb-16" id="private" aria-label="Private Projekte">
-    <h2 class="text-2xl font-bold text-center mb-8">Private Projekte</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8" aria-label="Liste privater Projekte">
+<div class="content-container mb-16" id="private" aria-label="Private Projekte">
+  <h2 class="text-2xl font-bold text-center mb-8">Private Projekte</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8" aria-label="Liste privater Projekte">
+    <app-project-accordion 
+      *ngFor="let proj of privateProjects" 
+      [project]="proj"
+      class="[&_.card:not(.h-auto)]:h-40 [&_.card:not(.h-auto)]:md:h-64 [&_.card:not(.h-auto)]:lg:h-40">
+    </app-project-accordion>
+  </div>
+</div>
+  <!-- WordPress Projekte -->
+  <div class="content-container mb-16" id="wordpress" aria-label="WordPress Projekte">
+    <h2 class="text-2xl font-bold text-center mb-8">WordPress Projekte</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-auto items-start" aria-label="Liste von WordPress-Projekten">
       <app-project-accordion 
-        *ngFor="let proj of privateProjects" 
+        *ngFor="let proj of wordpressProjects" 
         [project]="proj"
         [attr.aria-label]="'Projekt: ' + proj.title">
       </app-project-accordion>
     </div>
   </div>
 
-<!-- WordPress Projekte -->
-<div class="content-container mb-16" id="wordpress" aria-label="WordPress Projekte">
-  <h2 class="text-2xl font-bold text-center mb-8">WordPress Projekte</h2>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6" aria-label="Liste von WordPress-Projekten">
-    <app-project-accordion 
-      *ngFor="let proj of wordpressProjects" 
-      [project]="proj"
-      [attr.aria-label]="'Projekt: ' + proj.title">
-    </app-project-accordion>
-  </div>
-</div>
-
-
   <!-- Angular & Tailwind Projekte -->
   <div class="content-container" id="angular" aria-label="Angular & Tailwind Projekte">
     <h2 class="text-2xl font-bold text-center mb-8">Angular & Tailwind Projekte</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8" aria-label="Liste von Angular- und Tailwind-Projekten">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 auto-rows-auto items-start" aria-label="Liste von Angular- und Tailwind-Projekten">
       <app-project-accordion 
         *ngFor="let proj of angularProjects" 
         [project]="proj"

@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AccordionModule } from 'primeng/accordion';
-import { BrowserModule } from '@angular/platform-browser';
-import { NgClass } from '@angular/common';
 import { ProjectAccordionComponent } from './components/project-accordion/project-accordion.component';
 import { SkillCardComponent } from './components/skills-card/skill-card/skill-card.component';
 import { privateProjects } from './data/projects.data';

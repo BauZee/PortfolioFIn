@@ -1,6 +1,8 @@
 import { Component, Input } from '@angular/core';
-import { NgClass } from '@angular/common';
+
 import { CommonModule } from '@angular/common';
+
+import { NgClass } from '@angular/common';
 
 
 @Component({
@@ -13,6 +15,9 @@ import { CommonModule } from '@angular/common';
 export class ProjectAccordionComponent {
   @Input() project!: any;
   isOpen: boolean = false;
+  @Input() isPrivateProject: boolean = false;
+
+
 
   toggle() {
     this.isOpen = !this.isOpen;

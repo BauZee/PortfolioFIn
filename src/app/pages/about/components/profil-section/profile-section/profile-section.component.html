@@ -31,13 +31,13 @@
             <div class="space-y-4">
               <div *ngFor="let info of personalInfoLeft" class="flex flex-col">
                 <span class="info-label">{{ info.label }}:</span>
-                <span class="info-value break-words">{{ info.value }}</span>
+                <span class="break-words">{{ info.value }}</span>
               </div>
             </div>
             <div class="space-y-4">
               <div *ngFor="let info of personalInfoRight" class="flex flex-col">
                 <span class="info-label break-words">{{ info.label }}:</span>
-                <span class="info-value break-words">{{ info.value }}</span>
+                <span class="break-words">{{ info.value }}</span>
               </div>
             </div>
           </div>
@@ -49,7 +49,7 @@
             <dl class="space-y-4">
               <div *ngFor="let lang of languages" class="flex flex-col">
                 <span class="info-label break-words">{{ lang.label }}:</span>
-                <span class="info-value break-words">{{ lang.value }}</span>
+                <span class=" break-words">{{ lang.value }}</span>
               </div>
             </dl>
           </div>
@@ -59,7 +59,7 @@
             <dl class="space-y-4">
               <div *ngFor="let work of workInfo" class="flex flex-col">
                 <span class="info-label break-words">{{ work.label }}:</span>
-                <span class="info-value break-words">{{ work.value }}</span>
+                <span class=" break-words">{{ work.value }}</span>
               </div>
             </dl>
           </div>

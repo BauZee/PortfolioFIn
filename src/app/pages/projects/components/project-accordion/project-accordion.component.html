@@ -1,4 +1,4 @@
-<div class="card h-full" [ngClass]="{'md:col-span-2': isOpen}" aria-label="Projekt-Accordion">
+<div class="card h-full" [ngClass]="{'h-40': !isOpen, 'h-auto': isOpen}" aria-label="Projekt-Accordion">
   <div class="flex justify-between items-center cursor-pointer" (click)="toggle()" [attr.aria-expanded]="isOpen">
     <div>
       <h4 class="text-xl font-semibold text-primary">{{ project.title }}</h4>
